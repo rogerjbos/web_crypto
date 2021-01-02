@@ -1,0 +1,106 @@
+---
+title: "Crypto.com Testnet Node: sagepoint-node"
+author: "Roger J Bos, CFA"
+output: html_document
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<div id="install-the-crypto.com-testnet-on-ubuntu-20.04" class="section level3">
+<h3>Install the Crypto.com Testnet on Ubuntu 20.04</h3>
+<p>Download the binary</p>
+<pre><code>curl -LOJ https://github.com/crypto-com/chain-main/releases/download/v0.8.0-rc1/chain-main_0.8.0-rc1_Linux_x86_64.tar.gz
+tar -zxvf chain-main_0.8.0-rc1_Linux_x86_64.tar.gz</code></pre>
+<p>Initize the node with a moniker (node name). Here I am using ‘sagepoint-node’ as the moniker.</p>
+<pre><code>chain-maind init sagepoint-node --chain-id testnet-croeseid-2</code></pre>
+<p>Download the config file from the github site. It will be saved to a (hidden) directory called .chain-maind in your home director.</p>
+<pre><code>curl https://raw.githubusercontent.com/crypto-com/testnets/main/testnet-croeseid-2/genesis.json &gt; ~/.chain-maind/config/genesis.json</code></pre>
+<p>You need to change the <code>minimum-gas-prices</code> in the app.toml file.</p>
+<pre><code>sed -i.bak -E &#39;s#^(minimum-gas-prices[[:space:]]+=[[:space:]]+)&quot;&quot;$#\1&quot;0.025basetcro&quot;#&#39; ~/.chain-maind/config/app.toml</code></pre>
+<p>You need to set the <code>seeds</code> in the config.toml file.</p>
+<pre><code>sed -i.bak -E &#39;s#^(seeds[[:space:]]+=[[:space:]]+).$#\1&quot;b2c6657096aa30c5fafa5bd8ced48ea8dbd2b003@52.76.189.200:26656,ef472367307808b242a0d3f662d802431ed23063@175.41.186.255:26656,d3d2139a61c2a841545e78ff0e0cd03094a5197d@18.136.230.70:26656&quot;# ; s#^(create_empty_blocks_interval[[:space:]]+=[[:space:]]+).$#\1&quot;5s&quot;#&#39; ~/.chain-maind/config/config.toml</code></pre>
+<p>Add a wallet address. We will name the address Default, but you can choose any name.<br />
+In Ubuntu 20.04 add the –keyring-backend=“test” flag due to known bug.</p>
+<pre><code>chain-maind keys add Default3 --keyring-backend=&quot;test&quot;</code></pre>
+<p>Pay attention to the string in the <code>address</code> field as this is your wallet address where you will receive tokens. You can use the wallet address in the <code>from</code> field for any transactions, but you can also use the wallet <code>name</code>, which is easier to remember.<br />
+<em>Important: Save the seed words so you can restore the wallet if you ever change machines or rebuild your server. These 24 seed words will never be shown again.</em><br />
+If you want to recover an address use this command:</p>
+<pre><code>chain-maind keys add Default2 --keyring-backend=&quot;test&quot; --recover</code></pre>
+<p>Show wallet address</p>
+<pre><code>chain-maind keys list --keyring-backend=&quot;test&quot;</code></pre>
+<p>Now you can manually start your node to see if it works. The <code>Height</code> shows the current block it is on. You may see some errors while it is running, but as long as the <code>height</code> is increasing, it is working.</p>
+<pre><code>chain-maind start</code></pre>
+<p>Once you are assured it is working, you will probably want to make it run as a service. I did it by hand, but Crypto.com provides a script you can try:</p>
+<pre><code>git clone https://github.com/crypto-com/chain-main.git &amp;&amp; cd chain-main
+./networks/create-service.sh</code></pre>
+<p>After creating or modifying a service, you need to reload the daemon.</p>
+<pre><code>sudo systemctl daemon-reload</code></pre>
+<p>Then you can try starting the service.</p>
+<pre><code>sudo systemctl start chain-maind</code></pre>
+<p>Once it is started, you can check the status of it and make sure it didn’t fail to start.</p>
+<pre><code>sudo systemctl status chain-maind</code></pre>
+<p>If you ever need to stop the service.</p>
+<pre><code>sudo systemctl stop chain-maind</code></pre>
+<p>You can view the log of the chain-maind service.</p>
+<pre><code>journalctl -u chain-maind -f</code></pre>
+<p>At this point you just need to let your node sync up to the full blockchain, which can take anywhere from a few hours to a few days.
+You can see the current height by looking at the log file (above) or by running this command:</p>
+<pre><code>curl -s http://127.0.0.1:26657/status | jq .result.sync_info.latest_block_height</code></pre>
+<p>You can compare your node block height to the blockchain height at the <a href="https://chain.crypto.com/explorer/">Explorer site</a>.</p>
+<p>Once your node if fully synced up, you can register it as a validator node as follows (note that we are including <code>--keyring-backend="test"</code> because we are using Ubuntu 20.04, but if you are using 18.04 you can leave that off):</p>
+<pre><code>chain-maind tx staking create-validator --keyring-backend=&quot;test&quot; \
+--amount=5tcro \
+--moniker=&quot;sagepoint-node&quot; --security-contact=&quot;roger.bos@gmail.com&quot; \
+--from=Default \
+--pubkey=tcrocnclconspub1zcjduepqr37wjtjgqgjshlz5p7z4yzq7t64yslqx07rvcxn832n79n3rzxfqmt7asj \
+--chain-id=&quot;testnet-croeseid-2&quot; --fees=5000basetcro \
+--commission-rate=&quot;0.10&quot; --commission-max-rate=&quot;0.20&quot; --commission-max-change-rate=&quot;0.01&quot; \
+--min-self-delegation=&quot;1&quot;</code></pre>
+<p>You will have to have some tokens (TCRO) in order to perform any transactions, including registering as a validator. If you don’t have any TCRO tokens, you can see 10 TCRO each day from the <a href="https://chain.crypto.com/faucet">testnet faucet</a>:</p>
+<p>You can check your wallet balance as so (note you can have more than one wallet if you choose):</p>
+<pre><code>chain-maind query bank balances tcro1tncpcuhh7cedmp9jc6qap4vqm5kxulfapetd6y # Default</code></pre>
+<p>Here is an example of a send transaction where the tokens are coming from the wallet address defined in the <code>Default2</code> keyring and are going to address <code>tcro1tncpcuhh7cedmp9jc6qap4vqm5kxulfapetd6y</code>.</p>
+<pre><code>chain-maind tx bank send Default2 --keyring-backend=&quot;test&quot; \
+tcro1tncpcuhh7cedmp9jc6qap4vqm5kxulfapetd6y 25000basetcro --chain-id &quot;testnet-croeseid-2&quot; --gas-prices=&quot;0.1basetcro&quot;</code></pre>
+<p>Here is an example of delegating tokens to a validator (probably your own node validator, but you could delegate to someone elses). When you delegate to someone else’s validator node, you are not giving them your tokens and they cannot steal your tokens, but you are trusting there node that it will stay online and collect rewards, which will be shared with you based on how much you delegate.</p>
+<pre><code>chain-maind tx staking delegate tcrocncl1tncpcuhh7cedmp9jc6qap4vqm5kxulfa5xg5z8 --keyring-backend=&quot;test&quot; \
+140775basetcro --from=&quot;Default2&quot; --chain-id=&quot;testnet-croeseid-2&quot; --gas-prices=&quot;0.1basetcro&quot; -y</code></pre>
+<p>To do this, you will need to know the address of your validator. Mine is <code>tcrocncl1tncpcuhh7cedmp9jc6qap4vqm5kxulfa5xg5z8</code>
+To find the address of your validator, use this command:</p>
+<pre><code>chain-maind debug pubkey tcrocnclconspub1zcjduepqr37wjtjgqgjshlz5p7z4yzq7t64yslqx07rvcxn832n79n3rzxfqmt7asj</code></pre>
+<p>Another way to check the status of your validator node</p>
+<pre><code>chain-maind status | jq</code></pre>
+<p>You need to keep your node online and running 24/7 as that is required for the consensus network to operater. The rewards you get for operating the node are the carrots, and the sticks are slashing and jailing. If you node is offline for any reason (power outage, internet outage, server crash, etc.) then your power will be slashed (reduced) by a small amount (around 500) and you will be put in jail. Once you are in jail, you have to wait at least on hour. Once you notice that you are in jail, make sure your note is fully synced with the blockchain and then issue the following command to unjaill yourself:</p>
+<pre><code>chain-maind tx slashing unjail --from=Default --chain-id &quot;testnet-croeseid-2&quot; --gas-prices=&quot;0.1basetcro&quot;</code></pre>
+<p>View outstanding rewards for our validator node. You need to pass in the <code>tcrocncl1...</code> validator address.</p>
+<pre><code>chain-maind q distribution validator-outstanding-rewards tcrocncl1tncpcuhh7cedmp9jc6qap4vqm5kxulfa5xg5z8</code></pre>
+<p>You can see your validator address as follows:</p>
+<pre><code>chain-maind keys show Default --keyring-backend=&quot;test&quot; --bech val</code></pre>
+<p>Every few days you may want to withdraw rewards from your validator as they will be not automatically transfered to your wallet. Once you withdraw them to your wallet, you can delegate them to your validator so that your voting power will eventually increase.</p>
+<pre><code>chain-maind tx distribution withdraw-all-rewards --keyring-backend=&quot;test&quot; --from=Default --chain-id=&quot;testnet-croeseid-2&quot; --gas-prices=&quot;0.1basetcro&quot;</code></pre>
+<p>You can unbond funds from a validator using the following command:</p>
+<pre><code>chain-maind tx staking unbond tcrocncl1wassscvfuu8p87r96xt4etea2wd2lv6juwzxk6 99000000basetcro \
+ --keyring-backend=&quot;test&quot; --from Default --chain-id &quot;testnet-croeseid-2&quot; --gas-prices=&quot;0.1basetcro&quot;</code></pre>
+<p>There is also a command to see who all has delegated to a validator node. You can use this to see how much you have delegated to a specific validator so you know how much to unbond, for example.</p>
+<pre><code>chain-maind query staking delegations-to tcrocncl1tncpcuhh7cedmp9jc6qap4vqm5kxulfa5xg5z8 --output json  | jq</code></pre>
+<p>If you want to view the entire size of the staking pool:</p>
+<pre><code>chain-maind query staking pool --output json | jq</code></pre>
+<p>If you want to see the staking and distribution parameters of your node, you can try the following:</p>
+<pre><code>chain-maind query staking params --output json | jq
+chain-maind query distribution params --output json | jq</code></pre>
+<p>It might be interesting to see a (json) list of all the validator nodes.</p>
+<pre><code>chain-maind q staking validators -o json | jq</code></pre>
+<p>Show Consensus Node Validator &amp; Consensus Node Address</p>
+<pre><code>chain-maind tendermint show-validator
+chain-maind tendermint show-address</code></pre>
+<p>The keyring contains three addresses. The account (acc) key is shown by default.
+* bech acc is Account address (default if bech is not specified)
+* bech val is Validator address
+* bech cons is Consensus address</p>
+<pre><code>chain-maind keys show Default --keyring-backend=&quot;test&quot; --bech acc
+chain-maind keys show Default --keyring-backend=&quot;test&quot; --bech val
+chain-maind keys show Default --keyring-backend=&quot;test&quot; --bech cons</code></pre>
+</div>

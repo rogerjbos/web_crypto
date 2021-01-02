@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>investing on sagepoint-node - A Crypto.com testnet validator</title>
+    <link>https://crypto.rogerjbos.com/tags/investing/</link>
+    <description>Recent content in investing on sagepoint-node - A Crypto.com testnet validator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Roger J. Bos, CFA</copyright>
+    
+	<atom:link href="https://crypto.rogerjbos.com/tags/investing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Investing</title>
+      <link>https://crypto.rogerjbos.com/investing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/investing/</guid>
+      <description>Recession Forecasting using SVM
+Style and Size Spreads
+Fama-French Factor Returns
+Information Coefficients and Linear Models whitepaper and accompanying Shiny App</description>
+    </item>
+    
+  </channel>
+</rss>

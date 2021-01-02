@@ -1,0 +1,88 @@
+baseurl = "https://crypto.rogerjbos.com/"
+languageCode = "en-us"
+title = "sagepoint-node - A Crypto.com testnet validator"
+theme = "ghostwriter"
+googleAnalytics = "UA-121878757-3"
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+copyright = "Roger J. Bos, CFA"
+
+[Privacy]
+
+[Privacy.disqus]
+    disable = true
+
+[Privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+    useSessionStorage = false
+
+[Author]
+    name = "Roger J. Bos, CFA"
+    profile = ""
+
+[Taxonomies]
+    tag = "tags"
+
+[Params]
+    mainSections = ["Stats"]
+    intro = false
+    headline = ""
+    description = ""
+    github = "https://github.com/rogerjbos"
+    gitlab = ""
+    linkedin = "https://linkedin.com/in/rogerjbos/"
+    twitter = "https://twitter.com/rogerjbos"
+    stackoverflow = "https://stackoverflow.com/users/7351478"
+    facebook = "https://www.facebook.com/rogerjbos"
+    email = "roger.bos@gmail.com"
+    opengraph = true
+    shareTwitter = true
+    shareFacebook = true
+    shareGooglePlus = false
+    shareLinkedIn = true
+    dateFormat = "Mon, Jan 2, 2006"
+    highlightJsUrl = ""
+    highlightJsLocalUrl = ""
+    exponeaJsUrl = ""
+    exponeaTarget = ""
+    exponeaToken = ""
+    exponeaTrackVisits = false
+    readingTime = true
+    readingTimeText = "Estimated reading time:"
+
+[permalinks]
+    post = "/:slug/"
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+[[menu.main]]
+    name = "Stats"
+    url = "/stats/"
+    weight = 2
+[[menu.main]]
+    name = "How To Guide"
+    url = "/guide/"
+    weight = 3
+
+[params]
+    description = "sagepoint-node - A Crypto.com testnet validator"
+    # <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script> 
+    # <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="rogerjboscfa"><a class="LI-simple-link" href='https://www.linkedin.com/in/rogerjboscfa?trk=profile-badge'>Roger J. Bos, CFA</a></div>
+
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.12.0"
+    highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
+
+    MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    MathJaxVersion = "2.7.5"
+
+    [params.logo]
+    url = "logo.png"
+    width = 50
+    height = 50
+    alt = "Logo"

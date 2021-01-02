@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Information Coefficients and Linear Regression &middot; Roger J. Bos, CFA</title>
+        <meta name="description" content="Information Coefficients and Linear Regression">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.61.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Information Coefficients and Linear Regression">
+<meta property="og:description" content="Information Coefficients and Linear Regression">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://crypto.rogerjbos.com/ic_and_lm/">
+        <link rel="stylesheet" href="https://crypto.rogerjbos.com/dist/site.css">
+        <link rel="stylesheet" href="https://crypto.rogerjbos.com/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121878757-3', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="https://crypto.rogerjbos.com/">sagepoint-node - A Crypto.com testnet validator</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" aria-label="Twitter" href="https://twitter.com/rogerjbos" rel="me" >
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Facebook" aria-label="Facebook" href="https://www.facebook.com/rogerjbos" rel="me">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/rogerjbos" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" aria-label="Stack Overflow" href="https://stackoverflow.com/users/7351478" rel="me">
+                                <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://linkedin.com/in/rogerjbos/" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:roger.bos@gmail.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a href="/about/">About</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/stats/">Stats</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/guide/">How To Guide</a>
+    </li>
+
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Information Coefficients and Linear Regression</h1>
+    
+        <p class="post-description" itemprop="description">Information Coefficients and Linear Regression</p>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2019-12-20" itemprop="datePublished">Fri, Dec 20, 2019</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Roger J Bos, CFA</a>
+            </span>
+        </span>
+    </p>
+    
+        <p class="post-reading post-line">
+            <span>Estimated reading time: 11 min</span>
+        </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="motivation" class="section level3">
+<h3>Motivation</h3>
+<p>In this paper we use Monte Carlo simulation to show the relationship between the Information Coefficient (IC), correlation, decile returns, and linear regression.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> We can also gain insight into investment related questions, such as</p>
+<ul>
+<li>What level of IC is considered good?</li>
+<li>What effect does volatility have on the spread?</li>
+<li>What effect does universe size have on the hit rate?</li>
+</ul>
+<p>We will start off by defining some terms so we are all on the same page.</p>
+<ul>
+<li>The <em>Spread</em> is the difference between the average top decile return and the average bottom decile return.</li>
+<li>The <em>IC</em> is the correlation between two series, here the return series and the exposure series. The regular Pearson correlation can be used here, but most times Spearman’s Rank correlation is used because it is less effected by outliers.</li>
+<li>A <em>linear model</em> is the regression of one series versus another resulting in an intercept and a coefficients which describes the relationship between the two variables.</li>
+<li><em>R-squared</em> measures the goodness of fit of the linear model. It is also referred to as the coefficient of determination.</li>
+</ul>
+</div>
+<div id="simulation-process" class="section level3">
+<h3>Simulation Process</h3>
+<p>We proceed by assuming asset returns are normally distributed and we generate two random series from a bivariate normal distribution with given mean and correlation. We will call the first random series the <em>returns</em> and call the second random series the <em>exposures</em>. The <em>exposures</em> represent the factor, which could be momentum, book to price, or any other factor.</p>
+<p>As defined above, the correlation between the two random series is the IC. Here is how each simulation is performed</p>
+<ul>
+<li>Divide into deciles based on exposures</li>
+<li>Calculate spread between top decile and bottom decile</li>
+<li>Calculate the IC</li>
+<li>Run a linear regression</li>
+</ul>
+</div>
+<div id="base-case" class="section level3">
+<h3>Base case</h3>
+<p>To run the simulation we use the R programming language’s multivariate random number generator function <em>mvrnorm</em> from the MASS package to generate two series for each simulation. Both series have zero mean. They only thing they have in common is a correlation, which we vary from zero to twenty percent. Before going further into the details, let’s have a look at some simulations so we can describe how everything relates.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 1: </span>Table - 1 Assets: 1000 Simulations: 3000</caption>
+<thead>
+<tr class="header">
+<th align="right">Correlation</th>
+<th align="right">Return.Vol</th>
+<th align="right">Exposure.Vol</th>
+<th align="right">Spread</th>
+<th align="right">Pct.Positive</th>
+<th align="right">IC</th>
+<th align="right">R.squared</th>
+<th align="right">R</th>
+<th align="right">Coef</th>
+<th align="right">Scaled.IC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.00</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">-0.638</td>
+<td align="right">0.500</td>
+<td align="right">0.000</td>
+<td align="right">0.001</td>
+<td align="right">0.025</td>
+<td align="right">0.000</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="right">0.01</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">28.493</td>
+<td align="right">0.597</td>
+<td align="right">0.010</td>
+<td align="right">0.001</td>
+<td align="right">0.027</td>
+<td align="right">0.010</td>
+<td align="right">0.010</td>
+</tr>
+<tr class="odd">
+<td align="right">0.02</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">58.468</td>
+<td align="right">0.692</td>
+<td align="right">0.019</td>
+<td align="right">0.001</td>
+<td align="right">0.031</td>
+<td align="right">0.020</td>
+<td align="right">0.019</td>
+</tr>
+<tr class="even">
+<td align="right">0.03</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">83.163</td>
+<td align="right">0.762</td>
+<td align="right">0.028</td>
+<td align="right">0.002</td>
+<td align="right">0.035</td>
+<td align="right">0.030</td>
+<td align="right">0.028</td>
+</tr>
+<tr class="odd">
+<td align="right">0.04</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">112.369</td>
+<td align="right">0.846</td>
+<td align="right">0.038</td>
+<td align="right">0.003</td>
+<td align="right">0.043</td>
+<td align="right">0.040</td>
+<td align="right">0.038</td>
+</tr>
+<tr class="even">
+<td align="right">0.05</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">142.996</td>
+<td align="right">0.895</td>
+<td align="right">0.048</td>
+<td align="right">0.004</td>
+<td align="right">0.052</td>
+<td align="right">0.051</td>
+<td align="right">0.048</td>
+</tr>
+<tr class="odd">
+<td align="right">0.06</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">169.838</td>
+<td align="right">0.937</td>
+<td align="right">0.058</td>
+<td align="right">0.005</td>
+<td align="right">0.061</td>
+<td align="right">0.060</td>
+<td align="right">0.058</td>
+</tr>
+<tr class="even">
+<td align="right">0.07</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">198.313</td>
+<td align="right">0.956</td>
+<td align="right">0.067</td>
+<td align="right">0.006</td>
+<td align="right">0.071</td>
+<td align="right">0.071</td>
+<td align="right">0.067</td>
+</tr>
+<tr class="odd">
+<td align="right">0.10</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">286.839</td>
+<td align="right">0.993</td>
+<td align="right">0.097</td>
+<td align="right">0.011</td>
+<td align="right">0.101</td>
+<td align="right">0.101</td>
+<td align="right">0.097</td>
+</tr>
+<tr class="even">
+<td align="right">0.20</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">562.637</td>
+<td align="right">1.000</td>
+<td align="right">0.192</td>
+<td align="right">0.041</td>
+<td align="right">0.201</td>
+<td align="right">0.201</td>
+<td align="right">0.192</td>
+</tr>
+</tbody>
+</table>
+<p>You can see from the title of Table 1 that we run 3000 simulations, each with 1000 assets. By assets we mean how long each random series is and by simulations we mean how many random samples we draw. The values shown in the table are averages of all the simulations. The first column shows the correlation, which represents the <em>information</em>. The next two columns show the volatility of the <em>Returns</em> series and the <em>Exposures</em> series, which we have set to 8% for now, but will very later. The Spread shows one measure of the performance of the <em>factor</em>. The <em>Exposures</em> series is our <em>factor</em> and we create deciles based on that series. Once we have the deciles, we average the <em>Returns</em> for each decile. The spread is the difference between the top decile average return and the bottom decile average return. The percent positive column shows what proportion of the spreads are positive. Each simulation produces one spread, so since we have 3000 simulations, we have 3000 spreads. The average of these spreads is the spread column and the proportion positive is the percent positive column. The IC is the average correlation between the <em>exposures</em> and <em>returns</em> series and is another standard measure of the performance of a <em>factor</em>. Measuring the correlation between two factors is a quick and easy way to see how closely they are related, and how powerful the <em>exposures</em> may be in predicting <em>returns</em>. Another way to do so is to run a regression of the <em>exposures</em> on the <em>returns</em>. The regression function provides three main outputs, the y-intercept, the coefficient, and the R-squared measure. The R-squared is a measure of the goodness of fit of the regression equation. The square root of the R-squared statistic returns the IC (to a close approximation). In this simple one-variable linear regression framework the coefficient is equivalent to the correlation that was introduced to the two random series. Lastly, the coefficient can be approximated by the scaled IC as defined in the formula below:</p>
+<p><span class="math display">\[Scaled.IC = \frac{\sigma_{returns}}{\sigma_{exposures}} * IC\]</span></p>
+<p>In this table both the <em>returns</em> and <em>exposures</em> have the same standard deviation, so the volatility ratio is one, so it doesn’t seem very informative, but in the next table we will run simulations with a higher <em>returns</em> volatility and you will see the formula holds.</p>
+<p>Remember that these are random series with zero mean, so the only information content is the correlation. By running enough simulations we can reliably approximate the true correlation by both the IC and the R (the square root of the regression R-squared statistic). We can also approximate the coefficient by calculating the scaled IC.</p>
+</div>
+<div id="correlation-ic-and-hit-rate" class="section level3">
+<h3>Correlation, IC, and hit rate</h3>
+<p>As you can see from the base case simulation run, the correlation and the IC are closely linked. In these simulations the correlation is the given relationship between <em>returns</em> and <em>exposures</em> and the IC is a measurement of how well our signal (or rank in this case) works.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>The percent positive (Pct.Positive) column shows the number of simulation runs (out of 3000) that the spread was positive. This number is often called the hit rate. If the factor has a zero correlation we would expect a hit rate of 0.5 (or 50%). A correlation of one percent bumps the hit rate up to almost 60% and two percent gets us to 68%. Usually ICs in the range of 5% to 10% are considered very good. The hit rate in that case would be between 89% and 99%, which is very good indeed. Note that this is on a large universe of 1000 assets. We will see later that the hit rate declines rapidly as the number of assets falls.</p>
+</div>
+<div id="higher-return-volatility" class="section level3">
+<h3>Higher Return Volatility</h3>
+<p>In the next set of simulations we increase the return volatility from 8% to 16%.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-2">Table 2: </span>Table - 2 Assets: 1000 Simulations: 3000</caption>
+<thead>
+<tr class="header">
+<th align="right">Correlation</th>
+<th align="right">Return.Vol</th>
+<th align="right">Exposure.Vol</th>
+<th align="right">Spread</th>
+<th align="right">Pct.Positive</th>
+<th align="right">IC</th>
+<th align="right">R.squared</th>
+<th align="right">R</th>
+<th align="right">Coef</th>
+<th align="right">Scaled.IC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.00</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">4.706</td>
+<td align="right">0.519</td>
+<td align="right">0.001</td>
+<td align="right">0.001</td>
+<td align="right">0.025</td>
+<td align="right">0.002</td>
+<td align="right">0.002</td>
+</tr>
+<tr class="even">
+<td align="right">0.01</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">57.221</td>
+<td align="right">0.610</td>
+<td align="right">0.009</td>
+<td align="right">0.001</td>
+<td align="right">0.027</td>
+<td align="right">0.020</td>
+<td align="right">0.019</td>
+</tr>
+<tr class="odd">
+<td align="right">0.02</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">110.529</td>
+<td align="right">0.689</td>
+<td align="right">0.019</td>
+<td align="right">0.001</td>
+<td align="right">0.030</td>
+<td align="right">0.040</td>
+<td align="right">0.039</td>
+</tr>
+<tr class="even">
+<td align="right">0.03</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">173.812</td>
+<td align="right">0.781</td>
+<td align="right">0.029</td>
+<td align="right">0.002</td>
+<td align="right">0.036</td>
+<td align="right">0.062</td>
+<td align="right">0.059</td>
+</tr>
+<tr class="odd">
+<td align="right">0.04</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">228.217</td>
+<td align="right">0.842</td>
+<td align="right">0.038</td>
+<td align="right">0.003</td>
+<td align="right">0.043</td>
+<td align="right">0.080</td>
+<td align="right">0.076</td>
+</tr>
+<tr class="even">
+<td align="right">0.05</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">277.866</td>
+<td align="right">0.893</td>
+<td align="right">0.048</td>
+<td align="right">0.003</td>
+<td align="right">0.051</td>
+<td align="right">0.100</td>
+<td align="right">0.096</td>
+</tr>
+<tr class="odd">
+<td align="right">0.06</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">340.273</td>
+<td align="right">0.930</td>
+<td align="right">0.058</td>
+<td align="right">0.005</td>
+<td align="right">0.061</td>
+<td align="right">0.121</td>
+<td align="right">0.115</td>
+</tr>
+<tr class="even">
+<td align="right">0.07</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">388.867</td>
+<td align="right">0.957</td>
+<td align="right">0.066</td>
+<td align="right">0.006</td>
+<td align="right">0.070</td>
+<td align="right">0.139</td>
+<td align="right">0.132</td>
+</tr>
+<tr class="odd">
+<td align="right">0.10</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">566.175</td>
+<td align="right">0.996</td>
+<td align="right">0.096</td>
+<td align="right">0.011</td>
+<td align="right">0.101</td>
+<td align="right">0.202</td>
+<td align="right">0.192</td>
+</tr>
+<tr class="even">
+<td align="right">0.20</td>
+<td align="right">0.16</td>
+<td align="right">0.08</td>
+<td align="right">1123.468</td>
+<td align="right">1.000</td>
+<td align="right">0.192</td>
+<td align="right">0.041</td>
+<td align="right">0.201</td>
+<td align="right">0.402</td>
+<td align="right">0.384</td>
+</tr>
+</tbody>
+</table>
+<p>Doubling the <em>returns</em> volatility basically doubles the spread. The IC and the regression R (the square root of R-squared) still match the actual correlation between the two random series, but the coefficient is twice as large as in the previous table. This is because the <em>returns</em> volatility is now twice as high as the <em>exposures</em> volatility. The regression coefficient is accurately estimated by the scaled IC measure.</p>
+</div>
+<div id="lower-volatility" class="section level3">
+<h3>Lower Volatility</h3>
+<p>In the next table we simulate both series with only 2% volatility (for both <em>returns</em> and <em>exposures</em>). For a given correlation, the percent positive, IC, and coefficients are all comparable to the base case, but the spread is much lower. The <em>returns</em> volatility is what creates the opportunity to profit and if the correlation is high enough the investor can capitalize on the hit rate (percent positive).</p>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 3: </span>Table - 3 Assets: 1000 Simulations: 3000</caption>
+<thead>
+<tr class="header">
+<th align="right">Correlation</th>
+<th align="right">Return.Vol</th>
+<th align="right">Exposure.Vol</th>
+<th align="right">Spread</th>
+<th align="right">Pct.Positive</th>
+<th align="right">IC</th>
+<th align="right">R.squared</th>
+<th align="right">R</th>
+<th align="right">Coef</th>
+<th align="right">Scaled.IC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.00</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">-0.288</td>
+<td align="right">0.507</td>
+<td align="right">0.000</td>
+<td align="right">0.001</td>
+<td align="right">0.025</td>
+<td align="right">0.000</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="right">0.01</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">5.851</td>
+<td align="right">0.582</td>
+<td align="right">0.009</td>
+<td align="right">0.001</td>
+<td align="right">0.026</td>
+<td align="right">0.009</td>
+<td align="right">0.009</td>
+</tr>
+<tr class="odd">
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">14.205</td>
+<td align="right">0.691</td>
+<td align="right">0.019</td>
+<td align="right">0.001</td>
+<td align="right">0.031</td>
+<td align="right">0.020</td>
+<td align="right">0.019</td>
+</tr>
+<tr class="even">
+<td align="right">0.03</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">21.133</td>
+<td align="right">0.765</td>
+<td align="right">0.029</td>
+<td align="right">0.002</td>
+<td align="right">0.036</td>
+<td align="right">0.030</td>
+<td align="right">0.029</td>
+</tr>
+<tr class="odd">
+<td align="right">0.04</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">29.135</td>
+<td align="right">0.853</td>
+<td align="right">0.039</td>
+<td align="right">0.003</td>
+<td align="right">0.044</td>
+<td align="right">0.041</td>
+<td align="right">0.039</td>
+</tr>
+<tr class="even">
+<td align="right">0.05</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">35.756</td>
+<td align="right">0.897</td>
+<td align="right">0.048</td>
+<td align="right">0.003</td>
+<td align="right">0.051</td>
+<td align="right">0.050</td>
+<td align="right">0.048</td>
+</tr>
+<tr class="odd">
+<td align="right">0.06</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">41.340</td>
+<td align="right">0.926</td>
+<td align="right">0.056</td>
+<td align="right">0.004</td>
+<td align="right">0.060</td>
+<td align="right">0.059</td>
+<td align="right">0.056</td>
+</tr>
+<tr class="even">
+<td align="right">0.07</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">48.874</td>
+<td align="right">0.957</td>
+<td align="right">0.067</td>
+<td align="right">0.006</td>
+<td align="right">0.070</td>
+<td align="right">0.070</td>
+<td align="right">0.067</td>
+</tr>
+<tr class="odd">
+<td align="right">0.10</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">70.852</td>
+<td align="right">0.991</td>
+<td align="right">0.096</td>
+<td align="right">0.011</td>
+<td align="right">0.101</td>
+<td align="right">0.101</td>
+<td align="right">0.096</td>
+</tr>
+<tr class="even">
+<td align="right">0.20</td>
+<td align="right">0.02</td>
+<td align="right">0.02</td>
+<td align="right">139.786</td>
+<td align="right">1.000</td>
+<td align="right">0.191</td>
+<td align="right">0.041</td>
+<td align="right">0.200</td>
+<td align="right">0.200</td>
+<td align="right">0.191</td>
+</tr>
+</tbody>
+</table>
+<p>All the usual relationships hold. The only difference is that the spread is much lower due to the lower volatility of the <em>returns</em> series.</p>
+</div>
+<div id="higher-exposure-volatility" class="section level3">
+<h3>Higher Exposure Volatility</h3>
+<table>
+<caption><span id="tab:unnamed-chunk-4">Table 4: </span>Table - 4 Assets: 1000 Simulations: 3000</caption>
+<thead>
+<tr class="header">
+<th align="right">Correlation</th>
+<th align="right">Return.Vol</th>
+<th align="right">Exposure.Vol</th>
+<th align="right">Spread</th>
+<th align="right">Pct.Positive</th>
+<th align="right">IC</th>
+<th align="right">R.squared</th>
+<th align="right">R</th>
+<th align="right">Coef</th>
+<th align="right">Scaled.IC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.00</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">-4.077</td>
+<td align="right">0.479</td>
+<td align="right">0.000</td>
+<td align="right">0.001</td>
+<td align="right">0.025</td>
+<td align="right">0.000</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="right">0.01</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">26.704</td>
+<td align="right">0.595</td>
+<td align="right">0.009</td>
+<td align="right">0.001</td>
+<td align="right">0.026</td>
+<td align="right">0.005</td>
+<td align="right">0.005</td>
+</tr>
+<tr class="odd">
+<td align="right">0.02</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">54.774</td>
+<td align="right">0.684</td>
+<td align="right">0.019</td>
+<td align="right">0.001</td>
+<td align="right">0.030</td>
+<td align="right">0.010</td>
+<td align="right">0.009</td>
+</tr>
+<tr class="even">
+<td align="right">0.03</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">87.609</td>
+<td align="right">0.774</td>
+<td align="right">0.029</td>
+<td align="right">0.002</td>
+<td align="right">0.036</td>
+<td align="right">0.015</td>
+<td align="right">0.015</td>
+</tr>
+<tr class="odd">
+<td align="right">0.04</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">112.298</td>
+<td align="right">0.827</td>
+<td align="right">0.038</td>
+<td align="right">0.003</td>
+<td align="right">0.043</td>
+<td align="right">0.020</td>
+<td align="right">0.019</td>
+</tr>
+<tr class="even">
+<td align="right">0.05</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">142.001</td>
+<td align="right">0.890</td>
+<td align="right">0.048</td>
+<td align="right">0.004</td>
+<td align="right">0.052</td>
+<td align="right">0.025</td>
+<td align="right">0.024</td>
+</tr>
+<tr class="odd">
+<td align="right">0.06</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">169.091</td>
+<td align="right">0.940</td>
+<td align="right">0.058</td>
+<td align="right">0.005</td>
+<td align="right">0.061</td>
+<td align="right">0.030</td>
+<td align="right">0.029</td>
+</tr>
+<tr class="even">
+<td align="right">0.07</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">196.384</td>
+<td align="right">0.958</td>
+<td align="right">0.066</td>
+<td align="right">0.006</td>
+<td align="right">0.070</td>
+<td align="right">0.035</td>
+<td align="right">0.033</td>
+</tr>
+<tr class="odd">
+<td align="right">0.10</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">282.522</td>
+<td align="right">0.995</td>
+<td align="right">0.096</td>
+<td align="right">0.011</td>
+<td align="right">0.101</td>
+<td align="right">0.050</td>
+<td align="right">0.048</td>
+</tr>
+<tr class="even">
+<td align="right">0.20</td>
+<td align="right">0.08</td>
+<td align="right">0.16</td>
+<td align="right">560.802</td>
+<td align="right">1.000</td>
+<td align="right">0.192</td>
+<td align="right">0.041</td>
+<td align="right">0.200</td>
+<td align="right">0.100</td>
+<td align="right">0.096</td>
+</tr>
+</tbody>
+</table>
+<p>When the <em>exposures</em> volatility is twice as high as the <em>returns</em> volatility the spread remains comparable to the base case, but the scaled IC drops in half, as does the regression coefficient. Clearly, we want the volatility to be on the <em>returns</em> and not on the <em>exposures</em>.</p>
+</div>
+<div id="non-zero-mean" class="section level3">
+<h3>Non-zero Mean</h3>
+<table>
+<caption><span id="tab:unnamed-chunk-5">Table 5: </span>Table - 5 Assets: 1000 Simulations: 3000</caption>
+<thead>
+<tr class="header">
+<th align="right">Correlation</th>
+<th align="right">Return.Vol</th>
+<th align="right">Exposure.Vol</th>
+<th align="right">Spread</th>
+<th align="right">Pct.Positive</th>
+<th align="right">IC</th>
+<th align="right">R.squared</th>
+<th align="right">R</th>
+<th align="right">Coef</th>
+<th align="right">Scaled.IC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.00</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">-0.432</td>
+<td align="right">0.503</td>
+<td align="right">0.001</td>
+<td align="right">0.001</td>
+<td align="right">0.025</td>
+<td align="right">0.000</td>
+<td align="right">0.001</td>
+</tr>
+<tr class="even">
+<td align="right">0.01</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">30.924</td>
+<td align="right">0.617</td>
+<td align="right">0.010</td>
+<td align="right">0.001</td>
+<td align="right">0.026</td>
+<td align="right">0.011</td>
+<td align="right">0.010</td>
+</tr>
+<tr class="odd">
+<td align="right">0.02</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">56.714</td>
+<td align="right">0.695</td>
+<td align="right">0.020</td>
+<td align="right">0.001</td>
+<td align="right">0.030</td>
+<td align="right">0.021</td>
+<td align="right">0.020</td>
+</tr>
+<tr class="even">
+<td align="right">0.03</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">80.701</td>
+<td align="right">0.766</td>
+<td align="right">0.028</td>
+<td align="right">0.002</td>
+<td align="right">0.035</td>
+<td align="right">0.029</td>
+<td align="right">0.028</td>
+</tr>
+<tr class="odd">
+<td align="right">0.04</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">112.547</td>
+<td align="right">0.839</td>
+<td align="right">0.038</td>
+<td align="right">0.003</td>
+<td align="right">0.043</td>
+<td align="right">0.040</td>
+<td align="right">0.039</td>
+</tr>
+<tr class="even">
+<td align="right">0.05</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">140.570</td>
+<td align="right">0.890</td>
+<td align="right">0.047</td>
+<td align="right">0.003</td>
+<td align="right">0.051</td>
+<td align="right">0.050</td>
+<td align="right">0.047</td>
+</tr>
+<tr class="odd">
+<td align="right">0.06</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">169.998</td>
+<td align="right">0.941</td>
+<td align="right">0.058</td>
+<td align="right">0.005</td>
+<td align="right">0.061</td>
+<td align="right">0.061</td>
+<td align="right">0.058</td>
+</tr>
+<tr class="even">
+<td align="right">0.07</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">198.745</td>
+<td align="right">0.961</td>
+<td align="right">0.067</td>
+<td align="right">0.006</td>
+<td align="right">0.070</td>
+<td align="right">0.070</td>
+<td align="right">0.067</td>
+</tr>
+<tr class="odd">
+<td align="right">0.10</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">280.764</td>
+<td align="right">0.992</td>
+<td align="right">0.095</td>
+<td align="right">0.011</td>
+<td align="right">0.100</td>
+<td align="right">0.100</td>
+<td align="right">0.095</td>
+</tr>
+<tr class="even">
+<td align="right">0.20</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">557.761</td>
+<td align="right">1.000</td>
+<td align="right">0.190</td>
+<td align="right">0.041</td>
+<td align="right">0.199</td>
+<td align="right">0.199</td>
+<td align="right">0.190</td>
+</tr>
+</tbody>
+</table>
+<p>While generally a higher return is better, in this case we are measuring the spread, which is the difference between the average return in the top decile minus the average return in the bottom decile. So a higher return just increases the average return, but does not (necessarily) benefit the top decile more than the bottom decile, leaving the spread pretty much the same. As you can see, all the other metrics are comparable as well. The correlation and volatility are the two driving forces of factor performance.</p>
+</div>
+<div id="small-number-of-assets" class="section level3">
+<h3>Small Number of Assets</h3>
+<table>
+<caption><span id="tab:unnamed-chunk-6">Table 6: </span>Table - 6 Assets: 80 Simulations: 3000</caption>
+<thead>
+<tr class="header">
+<th align="right">Correlation</th>
+<th align="right">Return.Vol</th>
+<th align="right">Exposure.Vol</th>
+<th align="right">Spread</th>
+<th align="right">Pct.Positive</th>
+<th align="right">IC</th>
+<th align="right">R.squared</th>
+<th align="right">R</th>
+<th align="right">Coef</th>
+<th align="right">Scaled.IC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.00</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">2.743</td>
+<td align="right">0.500</td>
+<td align="right">0.000</td>
+<td align="right">0.013</td>
+<td align="right">0.092</td>
+<td align="right">0.000</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="right">0.01</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">41.387</td>
+<td align="right">0.533</td>
+<td align="right">0.013</td>
+<td align="right">0.013</td>
+<td align="right">0.090</td>
+<td align="right">0.013</td>
+<td align="right">0.013</td>
+</tr>
+<tr class="odd">
+<td align="right">0.02</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">51.954</td>
+<td align="right">0.550</td>
+<td align="right">0.019</td>
+<td align="right">0.013</td>
+<td align="right">0.090</td>
+<td align="right">0.020</td>
+<td align="right">0.019</td>
+</tr>
+<tr class="even">
+<td align="right">0.03</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">82.952</td>
+<td align="right">0.586</td>
+<td align="right">0.026</td>
+<td align="right">0.013</td>
+<td align="right">0.093</td>
+<td align="right">0.028</td>
+<td align="right">0.026</td>
+</tr>
+<tr class="odd">
+<td align="right">0.04</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">119.440</td>
+<td align="right">0.627</td>
+<td align="right">0.038</td>
+<td align="right">0.014</td>
+<td align="right">0.095</td>
+<td align="right">0.040</td>
+<td align="right">0.038</td>
+</tr>
+<tr class="even">
+<td align="right">0.05</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">146.190</td>
+<td align="right">0.645</td>
+<td align="right">0.046</td>
+<td align="right">0.015</td>
+<td align="right">0.099</td>
+<td align="right">0.049</td>
+<td align="right">0.046</td>
+</tr>
+<tr class="odd">
+<td align="right">0.06</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">157.657</td>
+<td align="right">0.655</td>
+<td align="right">0.054</td>
+<td align="right">0.016</td>
+<td align="right">0.103</td>
+<td align="right">0.058</td>
+<td align="right">0.054</td>
+</tr>
+<tr class="even">
+<td align="right">0.07</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">189.840</td>
+<td align="right">0.679</td>
+<td align="right">0.068</td>
+<td align="right">0.018</td>
+<td align="right">0.108</td>
+<td align="right">0.071</td>
+<td align="right">0.068</td>
+</tr>
+<tr class="odd">
+<td align="right">0.10</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">284.893</td>
+<td align="right">0.757</td>
+<td align="right">0.095</td>
+<td align="right">0.023</td>
+<td align="right">0.124</td>
+<td align="right">0.100</td>
+<td align="right">0.096</td>
+</tr>
+<tr class="even">
+<td align="right">0.20</td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">537.482</td>
+<td align="right">0.917</td>
+<td align="right">0.186</td>
+<td align="right">0.050</td>
+<td align="right">0.199</td>
+<td align="right">0.197</td>
+<td align="right">0.187</td>
+</tr>
+</tbody>
+</table>
+<p>As mentioned earlier, when we lower the number of assets to 80 the hit rate (Pct.Positive) falls substantially. The rest of the metrics are similar to the base case. Quantitative investing is a numbers game, where is pays to have as much breadth as possible. With 5% correlation and 1000 assets the simulated hit rate was 89%. With only 80 assets the simulated hit rate falls to around 63%. 63% is not bad for a hit rate, but you have to make numerous “bets” to get that advertised number. If you are only investing in a small number of assets, you could get a resulting hit rate that is much worse (or better) than the advertised hit rate.</p>
+</div>
+<div id="conclusion-and-shiny-app" class="section level3">
+<h3>Conclusion and Shiny App</h3>
+<p>This paper has explained the relationship between the Information Coefficient (IC) and linear regression model output. These simulations should help you understand the important of correlation in factor investing and what level of IC and/or correlation will yield acceptable results. We have shown that the larger the universe the better the expected hit rate (for a given correlation). We have shown that <em>returns</em> volatility is good and the <em>exposures</em> volatility is (relatively) bad. Average returns are not as important as the spread between the top and bottom deciles.</p>
+<p>If you would like to change the parameters and run your own simulations, please visit this <a href="https://sagepoint.shinyapps.io/IC_and_LM/">Shiny App link</a>.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This paper was motivated by a short paper and slides by Oliver Buckley at Invesco which can be found here(<a href="https://www.northinfo.com/documents/88.pdf" class="uri">https://www.northinfo.com/documents/88.pdf</a>).<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Since this is a simple one-factor (<em>exposure</em>) model, the IC matches the correlation very close (we are able to capture the full signal). In a multi-factor context the IC will usually be lower than the correlation because the factors will not be perfectly uncorrelated.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix"><div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Information%20Coefficients%20and%20Linear%20Regression&url=https%3a%2f%2fcrypto.rogerjbos.com%2fic_and_lm%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcrypto.rogerjbos.com%2fic_and_lm%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" aria-label="Share on Facebook">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Information%20Coefficients%20and%20Linear%20Regression&url=https%3a%2f%2fcrypto.rogerjbos.com%2fic_and_lm%2f&summary=Information%20Coefficients%20and%20Linear%20Regression"
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;" aria-label="Share on LinkedIn">
+               <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="https://crypto.rogerjbos.com/">sagepoint-node - A Crypto.com testnet validator</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://crypto.rogerjbos.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://crypto.rogerjbos.com/js/jquery.fitvids.js"></script>
+        <script src="https://crypto.rogerjbos.com/js/scripts.js"></script>
+    </body>
+</html>
+

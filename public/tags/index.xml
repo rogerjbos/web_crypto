@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on sagepoint-node - A Crypto.com testnet validator</title>
+    <link>https://crypto.rogerjbos.com/tags/</link>
+    <description>Recent content in Tags on sagepoint-node - A Crypto.com testnet validator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Roger J. Bos, CFA</copyright>
+    <lastBuildDate>Tue, 09 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crypto.rogerjbos.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shiny</title>
+      <link>https://crypto.rogerjbos.com/tags/shiny/</link>
+      <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/tags/shiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://crypto.rogerjbos.com/tags/linux/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>voip</title>
+      <link>https://crypto.rogerjbos.com/tags/voip/</link>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/tags/voip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diy</title>
+      <link>https://crypto.rogerjbos.com/tags/diy/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/tags/diy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>investing</title>
+      <link>https://crypto.rogerjbos.com/tags/investing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/tags/investing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
