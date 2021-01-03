@@ -427,6 +427,17 @@ If you want to recover an address use this command:</p>
 --chain-id=&quot;testnet-croeseid-2&quot; --fees=5000basetcro \
 --commission-rate=&quot;0.10&quot; --commission-max-rate=&quot;0.20&quot; --commission-max-change-rate=&quot;0.01&quot; \
 --min-self-delegation=&quot;1&quot;</code></pre>
+<p>After to cteate your validator, if you decide to make any changes to it, you can edit the parameters. Here is an example of adding a website url to the validator description.</p>
+<pre><code>chain-maind tx staking edit-validator --keyring-backend=&quot;test&quot; \
+  --moniker=&quot;sagepoint-node&quot; \
+  --website=&quot;https://crypto.rogerjbos.com&quot; \
+  --from=Default \
+  --fees=5000basetcro \
+  --chain-id=&quot;testnet-croeseid-2&quot; </code></pre>
+<p>View validator signing information In order to keep track of a validator’s signatures in the past you can do so by using the signing-info command:</p>
+<pre><code>./chain-maind query slashing signing-info \
+  tcrocnclconspub1zcjduepqr37wjtjgqgjshlz5p7z4yzq7t64yslqx07rvcxn832n79n3rzxfqmt7asj \
+  --chain-id=&quot;testnet-croeseid-2&quot; </code></pre>
 <p>You will have to have some tokens (TCRO) in order to perform any transactions, including registering as a validator. If you don’t have any TCRO tokens, you can see 10 TCRO each day from the <a href="https://chain.crypto.com/faucet">testnet faucet</a>:</p>
 <p>You can check your wallet balance as so (note you can have more than one wallet if you choose):</p>
 <pre><code>chain-maind query bank balances tcro1tncpcuhh7cedmp9jc6qap4vqm5kxulfapetd6y # Default</code></pre>
@@ -438,7 +449,7 @@ tcro1tncpcuhh7cedmp9jc6qap4vqm5kxulfapetd6y 25000basetcro --chain-id &quot;testn
 140775basetcro --from=&quot;Default2&quot; --chain-id=&quot;testnet-croeseid-2&quot; --gas-prices=&quot;0.1basetcro&quot; -y</code></pre>
 <p>To do this, you will need to know the address of your validator. Mine is <code>tcrocncl1tncpcuhh7cedmp9jc6qap4vqm5kxulfa5xg5z8</code> To find the address of your validator, use this command:</p>
 <pre><code>chain-maind debug pubkey tcrocnclconspub1zcjduepqr37wjtjgqgjshlz5p7z4yzq7t64yslqx07rvcxn832n79n3rzxfqmt7asj</code></pre>
-<p>Another way to check the status of your validator node</p>
+<p>Another way to check the status of your validator node:</p>
 <pre><code>chain-maind status | jq</code></pre>
 <p>You need to keep your node online and running 24/7 as that is required for the consensus network to operater. The rewards you get for operating the node are the carrots, and the sticks are slashing and jailing. If you node is offline for any reason (power outage, internet outage, server crash, etc.) then your power will be slashed (reduced) by a small amount (around 500) and you will be put in jail. Once you are in jail, you have to wait at least on hour. Once you notice that you are in jail, make sure your note is fully synced with the blockchain and then issue the following command to unjaill yourself:</p>
 <pre><code>chain-maind tx slashing unjail --from=Default --chain-id &quot;testnet-croeseid-2&quot; --gas-prices=&quot;0.1basetcro&quot;</code></pre>
