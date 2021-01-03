@@ -8,10 +8,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-
-
-
 ### Install the Crypto.com Testnet on Ubuntu 20.04
 
 Download the binary
@@ -114,6 +110,24 @@ chain-maind tx staking create-validator --keyring-backend="test" \
 --min-self-delegation="1"
 ```
 
+After to cteate your validator, if you decide to make any changes to it, you can edit the parameters.  Here is an example of adding a website url to the validator description.
+```
+chain-maind tx staking edit-validator --keyring-backend="test" \
+  --moniker="sagepoint-node" \
+  --website="https://crypto.rogerjbos.com" \
+  --from=Default \
+  --fees=5000basetcro \
+  --chain-id="testnet-croeseid-2" 
+```
+
+View validator signing information
+In order to keep track of a validator's signatures in the past you can do so by using the signing-info command:
+```
+./chain-maind query slashing signing-info \
+  tcrocnclconspub1zcjduepqr37wjtjgqgjshlz5p7z4yzq7t64yslqx07rvcxn832n79n3rzxfqmt7asj \
+  --chain-id="testnet-croeseid-2" 
+```
+
 You will have to have some tokens (TCRO) in order to perform any transactions, including registering as a validator.  If you don't have any TCRO tokens, you can see 10 TCRO each day from the [testnet faucet](https://chain.crypto.com/faucet):
 
 You can check your wallet balance as so (note you can have more than one wallet if you choose):
@@ -139,7 +153,7 @@ To find the address of your validator, use this command:
 chain-maind debug pubkey tcrocnclconspub1zcjduepqr37wjtjgqgjshlz5p7z4yzq7t64yslqx07rvcxn832n79n3rzxfqmt7asj
 ```
 
-Another way to check the status of your validator node
+Another way to check the status of your validator node:
 ```
 chain-maind status | jq
 ```

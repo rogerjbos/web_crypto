@@ -6,11 +6,7 @@
     <description>Recent content on sagepoint-node - A Crypto.com testnet validator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Roger J. Bos, CFA</copyright>
-    
-	<atom:link href="https://crypto.rogerjbos.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>Roger J. Bos, CFA</copyright><atom:link href="https://crypto.rogerjbos.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://crypto.rogerjbos.com/about/</link>
@@ -18,18 +14,6 @@
       
       <guid>https://crypto.rogerjbos.com/about/</guid>
       <description>This site has details about the sagepoint-node, which is a node validator for the Crypto.com testnet running in Connecticut. Statistics about the performance of the node can be found on the Statistics link. The node is running on a MacBook i7 with 8Gb of memory running Ubuntu 20.024. More details about he build are available in the Guide link. You can view the sagepoint-node on the Crypto.com Explorer site as well.</description>
-    </item>
-    
-    <item>
-      <title>Crypto.com Testnet Node: sagepoint-node</title>
-      <link>https://crypto.rogerjbos.com/guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/guide/</guid>
-      <description>Install the Crypto.com Testnet on Ubuntu 20.04 Download the binary
-curl -LOJ https://github.com/crypto-com/chain-main/releases/download/v0.8.0-rc1/chain-main_0.8.0-rc1_Linux_x86_64.tar.gz tar -zxvf chain-main_0.8.0-rc1_Linux_x86_64.tar.gz Initize the node with a moniker (node name). Here I am using ‘sagepoint-node’ as the moniker.
-chain-maind init sagepoint-node --chain-id testnet-croeseid-2 Download the config file from the github site. It will be saved to a (hidden) directory called .chain-maind in your home director.
-curl https://raw.githubusercontent.com/crypto-com/testnets/main/testnet-croeseid-2/genesis.json &amp;gt; ~/.chain-maind/config/genesis.json You need to change the minimum-gas-prices in the app.</description>
     </item>
     
   </channel>

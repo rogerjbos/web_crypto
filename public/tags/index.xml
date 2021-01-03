@@ -6,10 +6,6 @@
     <description>Recent content in Tags on sagepoint-node - A Crypto.com testnet validator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Roger J. Bos, CFA</copyright>
-    
-	<atom:link href="https://crypto.rogerjbos.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>Roger J. Bos, CFA</copyright><atom:link href="https://crypto.rogerjbos.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
