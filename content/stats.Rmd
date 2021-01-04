@@ -1,6 +1,5 @@
 ---
-title: Statistics for sagepoint-node validator
-date: As of `r Sys.time()` 
+title: Statistics for sagepoint-node `r Sys.time()` 
 output: html_document
 ---
 
