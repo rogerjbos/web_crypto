@@ -36,4 +36,6 @@ print(height)
 
 print(power)
 
+print(sample(5))
+
 ```

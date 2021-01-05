@@ -60,11 +60,11 @@ copyright = "Roger J. Bos, CFA"
     weight = 1
 [[menu.main]]
     name = "Stats"
-    url = "/stats/"
+    url = "/stats.html"
     weight = 2
 [[menu.main]]
     name = "How To Guide"
-    url = "/guide/"
+    url = "/guide.html"
     weight = 3
 
 [params]
