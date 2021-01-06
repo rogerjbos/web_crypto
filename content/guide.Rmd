@@ -164,6 +164,12 @@ Another way to check the status of your validator node:
 chain-maind status | jq
 ```
 
+Somtimes you will get an error `Internal error: timed out waiting for tx to be included in a block`.  You can minimize that by increasing the timeout period.  Modify `/.chain-maind/config/config.toml` to change the `timeout_broadcast_tx_commit` from 10 seconds to 20 seconds.
+```
+timeout_broadcast_tx_commit = "20s"
+```
+
+
 You need to keep your node online and running 24/7 as that is required for the consensus network to operater.  The rewards you get for operating the node are the carrots, and the sticks are slashing and jailing.  If you node is offline for any reason (power outage, internet outage, server crash, etc.) then your power will be slashed (reduced) by a small amount (around 500) and you will be put in jail.  Once you are in jail, you have to wait at least on hour.  Once you notice that you are in jail, make sure your note is fully synced with the blockchain and then issue the following command to unjaill yourself:
 ```
 chain-maind tx slashing unjail --from=Default --chain-id "testnet-croeseid-2" --gas-prices="0.1basetcro"
