@@ -153,6 +153,12 @@ To find the address of your validator, use this command:
 chain-maind debug pubkey tcrocnclconspub1zcjduepqr37wjtjgqgjshlz5p7z4yzq7t64yslqx07rvcxn832n79n3rzxfqmt7asj
 ```
 
+Check the signing info of your validator, again using the pubkey address of your validator
+```
+chain-maind q slashing signing-info tcrocnclconspub1zcjduepqr37wjtjgqgjshlz5p7z4yzq7t64yslqx07rvcxn832n79n3rzxfqmt7asj
+```
+The most interesting outout is shown in the `missed_blocks_counter` field which shows how many blocks were missed out of the last 2000.  If your validator misses over 1000 blocks of the last 2000, it will be jailed for at least one hour.  Once it is jailed, you will have to issue an unjail transaction to free it (after the first hour is up).  You will also need to insure your validator is fully synced up before trying to unjail.
+
 Another way to check the status of your validator node:
 ```
 chain-maind status | jq
