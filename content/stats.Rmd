@@ -1,0 +1,39 @@
+---
+title: Statistics for sagepoint-node `r Sys.time()` 
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(cache = FALSE)
+
+library(ggplot2)
+
+rd <- read.csv("/home/bosr/R_HOME/sagepoint.csv")
+rd$Rewards <- rd$Rewards / 1e9
+rd$Date <- as.Date(rd$Time)
+
+
+rewards <- ggplot(rd, aes(Date, Rewards, group = 1)) + 
+  geom_line() +
+  labs(title = "Outstanding Rewards in TCRO")
+
+height <- ggplot(rd, aes(Date, Height, group = 1)) + 
+  geom_line() +
+  labs(title = "Block Height")
+
+power <- ggplot(rd, aes(Date, Power, group = 1)) + 
+  geom_line() +
+  labs(title = "Voting Power")
+```
+
+```{r}
+print(rewards)
+
+print(height)
+
+print(power)
+
+```
