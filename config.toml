@@ -1,11 +1,11 @@
 baseurl = "https://crypto.rogerjbos.com/"
 languageCode = "en-us"
-title = "sagepoint-node - A Crypto.com testnet validator"
+title = "Cardano [BOS] Stake Pool"
 theme = "ghostwriter"
 googleAnalytics = "UA-121878757-3"
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-copyright = "Roger J. Bos, CFA"
+copyright = "2021 - Roger J. Bos, CFA"
 
 [Privacy]
 
@@ -25,10 +25,10 @@ copyright = "Roger J. Bos, CFA"
     tag = "tags"
 
 [Params]
-    mainSections = ["Stats"]
+    mainSections = ["Home"]
     intro = false
-    headline = ""
-    description = ""
+    headline = "Cardano [BOS] Stake Pool"
+    description = "Cardano [BOS] Stake Pool"
     github = "https://github.com/rogerjbos"
     gitlab = ""
     linkedin = "https://linkedin.com/in/rogerjbos/"
@@ -48,27 +48,31 @@ copyright = "Roger J. Bos, CFA"
     exponeaTarget = ""
     exponeaToken = ""
     exponeaTrackVisits = false
-    readingTime = true
+    readingTime = false
     readingTimeText = "Estimated reading time:"
 
 [permalinks]
     post = "/:slug/"
 
 [[menu.main]]
+    name = "Home"
+    url = "/home/"
+    weight = 1
+[[menu.main]]
     name = "About"
     url = "/about/"
     weight = 1
 [[menu.main]]
-    name = "Stats"
-    url = "/stats/"
+    name = "Staking"
+    url = "/staking/"
     weight = 2
 [[menu.main]]
-    name = "How To Guide"
-    url = "/guide/"
+    name = "FAQ"
+    url = "/faq/"
     weight = 3
 
 [params]
-    description = "sagepoint-node - A Crypto.com testnet validator"
+    description = "Cardano [BOS] Stake Pool"
     # <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script> 
     # <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="rogerjboscfa"><a class="LI-simple-link" href='https://www.linkedin.com/in/rogerjboscfa?trk=profile-badge'>Roger J. Bos, CFA</a></div>
 

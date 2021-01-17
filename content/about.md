@@ -2,4 +2,12 @@
 title: "About"
 ---
 
-This site has details about the sagepoint-node, which is a node validator for the Crypto.com testnet running in Connecticut.  Statistics about the performance of the node can be found on the [Statistics](https://crypto.rogerjbos.com/stats/) link.  The node is running on a MacBook i7 with 8Gb of memory running Ubuntu 20.024.  More details about he build are available in the [Guide](https://crypto.rogerjbos.com/guide/) link.  You can view the [sagepoint-node](https://chain.crypto.com/explorer/validator/tcrocncl1tncpcuhh7cedmp9jc6qap4vqm5kxulfa5xg5z8) on the [Crypto.com Explorer](https://chain.crypto.com/explorer/validators) site as well.
+Hi! I am Roger. I have a strong passion for finance, equities, and macroeconoimcs.  In addition to my passion for traditional finance, I also have a passion for crypto and blockchain technology.
+
+I run the [BOS] Stake Pool for Cardano.
+
+My goal is to empower others to revolutionise their thinking, open their minds to new disruptive technology & increase their Ada through staking. I want to help build the Cardano ecosystem and contribute to decentralization.
+
+[BOS] stake pool (Ticker: BOS) is a Cardano stake pool that produces blocks on the Cardano Mainnet and aimis to deliver a high ROA for delegators.
+
+For the benefit of delegators, I charge only the minimum fixed fee per epcho (340 ADA) and zero margin.  My goal is to run the best possible stake pool so I can maximize the growth of my Ada, but maximizing profits is not my sole objective.   I am here to learn more about crypto, specifically Cardano, and improve the ecosystem, that is why I do not charge a margin and charge only the minimum allowed staking fee.  This maximizes the potential rewards to my delegators.
