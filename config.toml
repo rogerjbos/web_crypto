@@ -1,4 +1,4 @@
-baseurl = "https://crypto.rogerjbos.com/"
+baseurl = "https://crypto.rogerjbos.com/home/"
 languageCode = "en-us"
 title = "Cardano [BOS] Stake Pool"
 theme = "ghostwriter"
@@ -25,7 +25,7 @@ copyright = "2021 - Roger J. Bos, CFA"
     tag = "tags"
 
 [Params]
-    mainSections = ["Home"]
+    mainSections = [""]
     intro = false
     headline = "Cardano [BOS] Stake Pool"
     description = "Cardano [BOS] Stake Pool"
