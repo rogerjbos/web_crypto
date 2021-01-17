@@ -61,15 +61,15 @@ copyright = "2021 - Roger J. Bos, CFA"
 [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 1
+    weight = 2
 [[menu.main]]
     name = "Staking"
     url = "/staking/"
-    weight = 2
+    weight = 3
 [[menu.main]]
     name = "FAQ"
     url = "/faq/"
-    weight = 3
+    weight = 4
 
 [params]
     description = "Cardano [BOS] Stake Pool"
