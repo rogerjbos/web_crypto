@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on sagepoint-node - A Crypto.com testnet validator</title>
+    <title>Tags on Cardano [BOS] Stake Pool</title>
     <link>https://crypto.rogerjbos.com/tags/</link>
-    <description>Recent content in Tags on sagepoint-node - A Crypto.com testnet validator</description>
+    <description>Recent content in Tags on Cardano [BOS] Stake Pool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Roger J. Bos, CFA</copyright><atom:link href="https://crypto.rogerjbos.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2021 - Roger J. Bos, CFA</copyright><atom:link href="https://crypto.rogerjbos.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
