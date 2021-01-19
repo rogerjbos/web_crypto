@@ -86,7 +86,7 @@ copyright = "2021 - Roger J. Bos, CFA"
     MathJaxVersion = "2.7.5"
 
     [params.logo]
-    url = "crypto.rogerjbos.com/cardano-ada-logo.png"
+    url = "https://crypto.rogerjbos.com/cardano-ada-logo.svg"
     width = 50
     height = 50
     alt = "Logo"

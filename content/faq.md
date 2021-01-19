@@ -27,5 +27,10 @@ Yes, you may switch at any time from within your [Daedalus](https://daedaluswall
 #### Where do the names Ada and Lovelace come from?
 Ada Lovelace was a pioneer of computing science born over two centuries ago.  She took part in writing the first published program and was a computing visionary, recognizing for the first time that computers could do much more than just calculations.  1 ADA = 1,000,000 Lovelace
 
-#### [BOS] stake pool ID:
-[19baf409a231aa295a81fab2a7d72e9b2f3b8605acbad0e427f22368](https://adapools.org/pool/19baf409a231aa295a81fab2a7d72e9b2f3b8605acbad0e427f22368)
+* Pool Ticker: BOS
+* Pool Name: BosPool
+* Pool ID: [19baf409a231aa295a81fab2a7d72e9b2f3b8605acbad0e427f22368](https://adapools.org/pool/19baf409a231aa295a81fab2a7d72e9b2f3b8605acbad0e427f22368)
+* Fixed fee: 340 ADA
+* Margin: Zero! 
+
+![](https://crypto.rogerjbos.com/cardano-ada-logo.svg)
