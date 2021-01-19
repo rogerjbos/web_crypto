@@ -2,7 +2,9 @@
 title: "FAQ"
 ---
 
-WARNING: NEVER SEND YOUR ADA TO ANOTHER ADDRESS TO STAKE!  PLEASE SEE BELOW.
+*Warning: Never send your ADA to another address to stake!  Please see below.*
+
+![](https://crypto.rogerjbos.com/cardano_logo1.png)
 
 FAQ
 

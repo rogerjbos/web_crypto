@@ -2,6 +2,8 @@
 title: "About"
 ---
 
+![](https://crypto.rogerjbos.com/cardano_logo2.png)
+
 Greetings.  I am Roger J. Bos and I have a strong passion for finance, equities, and macroeconoimcs.  In addition to my passion for traditional finance, I also have a passion for crypto and blockchain technology.
 
 I run the [BOS] Stake Pool for Cardano.

@@ -55,7 +55,7 @@ copyright = "2021 - Roger J. Bos, CFA"
     post = "/:slug/"
 
 [[menu.main]]
-    name = "Blog"
+    name = "Home"
     url = "/"
     weight = 1
 [[menu.main]]
