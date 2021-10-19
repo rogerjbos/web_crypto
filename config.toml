@@ -63,7 +63,7 @@ copyright = "2021 - Roger J. Bos, CFA"
     url = "/"
     weight = 2
 [[menu.main]]
-    name = "Prices"
+    name = "Tokens"
     url = "/prices/"
     weight = 3
 [[menu.main]]
