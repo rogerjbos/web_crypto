@@ -25,7 +25,8 @@ copyright = "2021 - Roger J. Bos, CFA"
     tag = "tags"
 
 [Params]
-    mainSections = ["Home"]
+    mainSections:
+    - post
     intro = true
     headline = "Crypto Adventures"
     description = "Staking, DeFi, Farming, and more."
@@ -53,7 +54,7 @@ copyright = "2021 - Roger J. Bos, CFA"
 
 [permalinks]
     post = "/:slug/"
-
+    
 [[menu.main]]
     name = "Home"
     url = "/"
@@ -64,7 +65,7 @@ copyright = "2021 - Roger J. Bos, CFA"
     weight = 2
 [[menu.main]]
     name = "Blog"
-    url = "/post/"
+    url = "/"
     weight = 3
 [[menu.main]]
     name = "Glossary"

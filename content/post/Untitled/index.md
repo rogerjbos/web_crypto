@@ -15,7 +15,7 @@ draft: yes
 
 What is DeFi and Yield Farming?  DeFi stands for Decentralized Finance and it represents financial services such as lending and borrowing that are provided over the blockchain.  The *decentralized* part means that instead of having a bank stand between the lender and the borrower, taking a large cut, a protocal (some code and a blockchain) is the intermediary instead.  The protocal still takes a cut, but it is much smaller than in TradFi (Traditional Finance).
 
-I got started in Crypto about a year ago and up on recently, I was only using centralized exchanges to earn interest on my crypto holdings.  Why are holders of crypto able to earning interest?  The same way banks do, by lending it out to people who want to borrow  it.
+I got started in Crypto about a year ago and until recently, I was only using centralized exchanges to earn interest on my crypto holdings.  Why are holders of crypto able to earning interest?  The same way banks do, by lending it out to people who want to borrow  it.
 
 ### Why Borrow ###
 
@@ -38,14 +38,14 @@ The following two screen shots show how much the gas fees can very during the sa
 ![SS_unstake_low](/img/SS_unstake_low.png) 
 ![SS_unstake_high](/img/SS_unstake_high.png) 
 
-As you can see, the gas fees for a staking or unstaking transaction can be anywhere from $50 to $600 depending on the amount of congestion at a particular time of day.  The best times to do Ethereum transactions is between midnight and 6 am Eastern time (when most people are asleep).  I think I was able to get the unstaking transaction done for around $40 by waiting until 3am.  As you can see at the bottom of the screen shot I earned about $222 worth of rewards, so since I had to perform three separate Ethereum transactions to deposite the pair, stake, and unstake, I probably lost half of my earnings to gas fees.
+As you can see, the gas fees for a staking or unstaking transaction can be anywhere from $57 to $697 depending on the amount of congestion at a particular time of day.  The best times to do Ethereum transactions is between midnight and 6 am Eastern time (when most people are asleep).  I didn't really pay that much in gas fees.  I think I was able to get the unstaking transaction done for less than $40 by waiting until 3am or so in the morning.  As you can see at the bottom of the screen shot I earned about $222 worth of rewards, so since I had to perform three separate Ethereum transactions to deposit the pair, stake the LPs, and unstake, I probably lost half of my earnings to gas fees.
 
 Even though the Ethereum gas fees are high, since I already have the 13 LPs, I did decie to re-stake them into the new ShapeShift pool.  That transaction cost me about $38, as shown in the following screen shot:
 
-![SS_unstake_high](/img/SS_stake.png)
+![SS_staking](/img/SS_staking.png)
 
-To be fair, I only entered the prior stake pool two months ago, so my stake didn't have very much time to earn rewards.  This time the new incentive stake pool lasts until February 2021, so I should be able to earn a lot more this time around.  In all DeFi can be a fun wat learn more about crypto and earn some money, but the high Ethereum gas fees do take a lot of the fun away.  In the next few days I will post about DeFi options on different chains with much lower gas fees.
+To be fair, I only entered the prior stake pool two months ago, so my stake didn't have very much time to earn rewards.  This time the new incentive stake pool lasts until February 2021.  That give me over four months of staking rewards so I should be able to earn a lot more this time around.  In sum, DeFi can be a fun way learn more about crypto and earn passive income, but the high Ethereum gas fees do take a lot of the fun away.  In the next few days I will post about DeFi options on different chains with much lower gas fees!  That will be truly fun.
 
 ### Disclaimer ###
 
-These posts are for informational and educational purposes only and should not be construed as investment advice or recommendations.  In this series I am just outlining what I am doing to learn more about the cyrpto space.  Just because I am doing this, that does not mean these activies are suitable for you.  Please do your own research and stay skeptical.  These markets are not normal.
+These posts are for informational and educational purposes only and should not be construed as investment advice or a recommendation to buy or sell any tokens.  In this series I am just outlining what I am doing to learn more about the cyrpto space.  Just because I am comfortable doing this, that does not necessarily mean these activities are suitable for you.  I have not received any compoensation from any of the products or services mentioned herein.  Please do your own research and stay skeptical.  These markets are not normal.
