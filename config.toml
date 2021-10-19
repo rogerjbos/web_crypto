@@ -25,8 +25,7 @@ copyright = "2021 - Roger J. Bos, CFA"
     tag = "tags"
 
 [Params]
-    mainSections:
-    - post
+    mainSections = "post"
     intro = true
     headline = "Crypto Adventures"
     description = "Staking, DeFi, Farming, and more."
@@ -56,16 +55,16 @@ copyright = "2021 - Roger J. Bos, CFA"
     post = "/:slug/"
     
 [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-[[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 2
+    weight = 1
 [[menu.main]]
     name = "Blog"
     url = "/"
+    weight = 2
+[[menu.main]]
+    name = "Prices"
+    url = "/prices/"
     weight = 3
 [[menu.main]]
     name = "Glossary"
@@ -87,7 +86,7 @@ copyright = "2021 - Roger J. Bos, CFA"
     MathJaxVersion = "2.7.5"
 
     [params.logo]
-    url = "https://crypto.rogerjbos.com/cardano-ada-logo.svg"
+    url = "logo.png"
     width = 50
     height = 50
     alt = "Logo"
