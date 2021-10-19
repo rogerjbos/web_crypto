@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cardano [BOS] Stake Pool</title>
+    <title>Crypto Adventures</title>
     <link>https://crypto.rogerjbos.com/</link>
-    <description>Recent content on Cardano [BOS] Stake Pool</description>
+    <description>Recent content on Crypto Adventures</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>2021 - Roger J. Bos, CFA</copyright>
-    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Cardano Stake Launch - BosPool</title>
-      <link>https://crypto.rogerjbos.com/cardano-stake-launch-bospool/</link>
-      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/cardano-stake-launch-bospool/</guid>
-      <description>Stake like a Boss!
-Zero Margin and minimum fees mean more return for you!
-TICKER: BOS
-CARDANO Cardano is a blockchain platform designed and built by Charles Hoskinson and his talented team at IOHK. Cardano and the supported native cryptocurrency ADA were designed to be secure, scalable and robust enough to support foundational change.
-[BOS] stake pool ID: 19baf409a231aa295a81fab2a7d72e9b2f3b8605acbad0e427f22368</description>
-    </item>
-    
+    <copyright>2021 - Roger J. Bos, CFA</copyright><atom:link href="https://crypto.rogerjbos.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://crypto.rogerjbos.com/about/</link>
@@ -29,7 +15,7 @@ CARDANO Cardano is a blockchain platform designed and built by Charles Hoskinson
       <guid>https://crypto.rogerjbos.com/about/</guid>
       <description>Greetings. I am Roger J. Bos and I have a strong passion for finance, equities, and macroeconoimcs. In addition to my passion for traditional finance, I also have a passion for crypto and blockchain technology.
 I run the [BOS] Stake Pool for Cardano.
-My goal is to empower others to revolutionise their thinking, open their minds to new disruptive technology and increase their ADA through staking. I want to help build the Cardano ecosystem and contribute to decentralization.</description>
+My goal is to learn and spread knowledge of cryptocurrencies, explore the possibilies of new disruptive technology, and increase ADA through staking. I want to help build the Cardano ecosystem and contribute to decentralization.</description>
     </item>
     
     <item>
@@ -38,7 +24,7 @@ My goal is to empower others to revolutionise their thinking, open their minds t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://crypto.rogerjbos.com/faq/</guid>
-      <description>WARNING: NEVER SEND YOUR ADA TO ANOTHER ADDRESS TO STAKE! PLEASE SEE BELOW.
+      <description>Warning: Never send your ADA to another address to stake! Please see below.
 FAQ
 Could I lose my ADA during staking? No, your ADA never leaves your wallet when you stake. Staking is a feature built into the Daedalus and Yoroi wallets that allows you to delegate your funds for a return on stake in the selected pool. In case you are not aware, with the Daedalus wallet you have to sync up the complete Cardano blockchain while the Yoroi wallet is a light wallet that does not require full syncing.</description>
     </item>
@@ -62,8 +48,7 @@ DAEDALUS Daedalus wallet is a desktop, full-node hierarchical deterministic (HD)
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://crypto.rogerjbos.com/staking/</guid>
-      <description>Cardano [BOS] Stake Pool
-Why stake with the [BOS] stake pool? I am committed to providing only top quality staking services to delegators. I am always learning and improving, with the goal to maximize pool efficiency in block producing capabilities.
+      <description>Cardano [BOS] Stake Pool Why stake with the [BOS] stake pool? I am committed to providing only top quality staking services to delegators. I am always learning and improving, with the goal to maximize pool efficiency in block producing capabilities.
 Staking is simple With just a few clicks in your Daedalus or Yoroi wallet you can access my pool. Once you are staking within the pool your payouts are automatically sent directly to your wallet every epoch.</description>
     </item>
     
