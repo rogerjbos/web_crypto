@@ -1,12 +1,11 @@
 ---
-title: ShapeShift Yield Farming
+title: Yield Farming on Shape Shift
 author: Roger J. Bos, CFA
 date: '2021-10-18'
-slug: shapeshift-yield-farming
+slug: yield-farming-on-shape-shift
 categories: [DeFi]
 tags: [Yield Farming]
-description: 'ShapeShift Yield Farming'
-draft: yes
+description: ''
 ---
 
 ### Intro ###
