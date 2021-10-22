@@ -31,9 +31,11 @@ From within the Bitpie app, there are really only three things you can do:
 - Receive
 - Delegate
 
+Transfer would be used to send your tokens back to an exchange if you wanted to sell them and receive would be used to receive tokens from an exchange and store them in your wallet.  Those are both pretty straightforward, so we will focus on the delegate option.
+
 ### Delegate ###
 
-As mentioned above, delegating is the processes of choose a validator that you want to stake your tokens with.  If you click __Delegate__ within the Bitpie app, it will take you to the Validators tab.  It is really hard to know which validator to choose.  The app doesn't really tell you anything aobut the validator, but there is a link to each validator's web page, so you can read a little about them.  When I first delegated seven months ago I picked three that sounded good and went with it.  One thing I paid attention to was the commission.  The commission ranges between zero and 20 percent.  There is no reason to pay a 20% commission as you can find plenty of good validators.  All the validator's I choose had commissions of 10%.
+As mentioned above, delegating is the processes of choose a validator that you want to stake your tokens with.  If you click __Delegate__ within the Bitpie app, it will take you to the Validators tab.  It is really hard to know which validator to choose.  The app doesn't really tell you anything aobut the validator, but there is a link to each validator's web page, so you can read a little about them.  When I first delegated seven months ago I picked three that sounded good and went with it.  One thing I paid attention to was the commission.  The commission ranges between zero and 20 percent.  There is no reason to pay a 20% commission as you can find plenty of good validators that only charge 10%.  All the validator's I choose had commissions of 10%.
 
 ### Checking Rewards ###
 
@@ -43,12 +45,14 @@ To find out more information, you need to go to [Oasis Scan](https://www.oasissc
 
 As I mentioned above, when I first staked seven months ago I split tokens among three validators:
 - [P2P](https://www.oasisscan.com/validators/detail/oasis1qq7vyz4ewrdh00yujw0mgkf459et306xmvh2h3zg)
-- [Blockdaemon 2](https://www.oasisscan.com/validators/detail/oasis1qz6j6elhypc70gv8faax3rlpv8ygx39grc55lwwm)
 - [Bison Trails](https://www.oasisscan.com/validators/detail/oasis1qz86vltcdhjurzuvzfhkku4yaf7vf2umdvpwmtlv)
+- [Blockdaemon 2](https://www.oasisscan.com/validators/detail/oasis1qz6j6elhypc70gv8faax3rlpv8ygx39grc55lwwm)
 
-Just are just three that I happened to, I am not recommending these three.  In fact, I picked a bad one.
+These validators are just three that I happened to choose, I am not recommending any or all of these three.  In fact, I picked a bad one.
 
-I noticed that the stake in two of them were very similar, but the stake in Blockdaemon 2 was noticably smaller.  Checking Oasis Scan shows that Blockdaemon 2 is no long an active validator, so I debonded from that validator and split my new tokens among the two remaining.  This shows that it is important to keep an eye on where you are staking and make sure that the node is operating as it should.  
+I noticed that the stake in the first two of them were very similar, but the stake in Blockdaemon 2 was noticably smaller.  Checking Oasis Scan shows that Blockdaemon 2 is no long an active validator.  I don't know how to tell when it went offline, but it lost 25% of its stake on October 6th, so that may have been the time.  It is worth pointing out that even when the validator goes offline, either of purpose or accidentally, as a staker you don't lose of your stake, the only penalty is that you stop getting rewards as long as your validator is not signing transactions. 
+
+As a result of seeing this, I debonded from that validator and split my new token allocation  between the two remaining validators.  This shows that it is important to keep an eye on where you are staking and make sure that the node is operating as it should.  This tought me to be more vigilant about checking the validators.  Given my relatively small stake, I didn't need to allocate to three validators, two is plenty.
 
 ### Debonding ###
 
