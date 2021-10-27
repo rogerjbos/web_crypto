@@ -67,6 +67,10 @@ copyright = "2021 - Roger J. Bos, CFA"
     url = "/prices/"
     weight = 3
 [[menu.main]]
+    name = "NAV"
+    url = "/reports/NAV.html"
+    weight = 4
+[[menu.main]]
     name = "Glossary"
     url = "/glossary/"
     weight = 4
