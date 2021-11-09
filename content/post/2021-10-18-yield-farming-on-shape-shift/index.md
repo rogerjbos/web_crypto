@@ -45,4 +45,4 @@ To be fair, I only entered the prior stake pool two months ago, so my stake didn
 
 ### Disclaimer ###
 
-These posts are for informational and educational purposes only and should not be construed as investment advice or a recommendation to buy or sell any tokens.  In this series I am just outlining what I am doing to learn more about the cyrpto space.  Just because I am comfortable doing this, that does not necessarily mean these activities are suitable for you.  I have not received any compoensation from any of the products or services mentioned herein.  Please do your own research and stay skeptical.  These markets are not normal.
+These posts are for informational and educational purposes only and should not be construed as investment advice or a recommendation to buy or sell any tokens.  In this series I am just outlining what I am doing to learn more about the cyrpto space.  Just because I am comfortable doing this, that does not necessarily mean these activities are suitable for you.  I have not received any compensation from any of the products or services mentioned herein.  Please do your own research and stay skeptical.  These markets are not normal.
