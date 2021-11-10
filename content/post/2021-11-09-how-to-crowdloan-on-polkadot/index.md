@@ -1,10 +1,10 @@
 ---
 title: How to crowdloan on Polkadot
-author: Package Build
+author: Roger J. Bos, CFA
 date: '2021-11-09'
 slug: how-to-crowdloan-on-polkadot
-categories: []
-tags: []
+categories: [DeFi]
+tags: [Polkadot]
 description: ''
 ---
 
@@ -32,6 +32,8 @@ runtime. Funds sent directly to an account, without using the crowdloan function
 ### Acala ###
 
 [Acala](https://acala.network/) aims to be the DeFi hub of Polkadot.  You can read all about the project on their webpage.  If you want to contribute some **DOT** to their crowdloan, you can click on the [Contribute Now](https://acala.network/acala/join-acala#join-acala) button on the top right portion of the page.  Better yet, click on __Learn__ in the menu bar and then __Quests__ (or just use this [Quests](https://acala.network/acala/quests) link).  That will open up 4 quests that will walk you through the step necessary to participate in the crowd loan.  By completing all four steps you will have a Polkadot wallet with **DOT** and be read to start earning Acala's **ACA** tokens once the auction ends. At the end of the lease, your **DOT** tokens will be returned to you.
+
+As of the time of this post, the Acala project had the most contributions of any project.  Should you decide, after doing your own research, that you would like to contribute as well, you can use my [referral link](https://acala.network/acala/join-acala?ref=0xc6c50586c6fe68c2d253bd05decd6674ac8d8849f29540cdf4c603c9c715295d) to get an extra 5% of **ACA** allocation.
 
 ### Astar ###
 
