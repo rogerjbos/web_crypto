@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Polkadot on Crypto Adventures</title>
+    <link>https://crypto.rogerjbos.com/tags/polkadot/</link>
+    <description>Recent content in Polkadot on Crypto Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2021 - Roger J. Bos, CFA</copyright>
+    <lastBuildDate>Tue, 09 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/tags/polkadot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to crowdloan on Polkadot</title>
+      <link>https://crypto.rogerjbos.com/how-to-crowdloan-on-polkadot/</link>
+      <pubDate>Tue, 09 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/how-to-crowdloan-on-polkadot/</guid>
+      <description>Introduction Polkadot is a scalable sharded chain and the first protocol that provides a secure environment for cross-chain composability across multiple shards. Polkadot believes in a multi-blockchain world and hopes to host many of those blockchains in its ecosystem, which it calls parachains. Parachains allow other projects to build on Polkadot and get all their security and interoperability from the Polkadot system, but there are a limited number of parachains, so projects have to lease space on a parachain by posting Polkadot&amp;rsquo;s native governance tokoen DOT as collateral.</description>
+    </item>
+    
+  </channel>
+</rss>

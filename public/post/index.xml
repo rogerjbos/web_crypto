@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Crypto Adventures</title>
-    <link>https://crypto.rogerjbos.com/</link>
-    <description>Recent content on Crypto Adventures</description>
+    <title>Posts on Crypto Adventures</title>
+    <link>https://crypto.rogerjbos.com/post/</link>
+    <description>Recent content in Posts on Crypto Adventures</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 - Roger J. Bos, CFA</copyright>
-    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Yield Farming on Osmosis</title>
       <link>https://crypto.rogerjbos.com/yield-farming-on-osmosis/</link>
@@ -101,33 +101,6 @@ I noticed that one of the centralized exchanges I use, Kraken, was offering a 20
       
       <guid>https://crypto.rogerjbos.com/yield-farming-on-shape-shift/</guid>
       <description>Intro What is DeFi and Yield Farming? DeFi stands for Decentralized Finance and it represents financial services such as lending and borrowing that are provided over the blockchain. The decentralized part means that instead of having a bank stand between the lender and the borrower, taking a large cut, a protocal (some code and a blockchain) is the intermediary instead. The protocal still takes a cut, but it is much smaller than in TradFi (Traditional Finance).</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://crypto.rogerjbos.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/about/</guid>
-      <description>I am Roger J. Bos and I have a strong passion for finance, equities, and macroeconoimcs. In addition to my passion for traditional finance, I also have a passion for crypto and blockchain technology. On this site I blog about my learning adventure in crypto.</description>
-    </item>
-    
-    <item>
-      <title>Glossary</title>
-      <link>https://crypto.rogerjbos.com/glossary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/glossary/</guid>
-      <description>TEST PAGE</description>
-    </item>
-    
-    <item>
-      <title>Tokens</title>
-      <link>https://crypto.rogerjbos.com/prices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/prices/</guid>
-      <description>TEST PAGE</description>
     </item>
     
   </channel>

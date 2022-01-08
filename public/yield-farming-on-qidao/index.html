@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Yield Farming on QiDao &middot; Roger J. Bos, CFA</title>
+        <meta name="description" content="Introduction QuickSwap is a fork of Uniswap that runs on the Polygon network. I have written about Polygon in previous posts and how much less expensive it is to transact with compared to Ethereum.
+QiDao is a protocol that allows users to lock tokens as collator and borrow MAI stable coin interest free. MAI is the stable coin used on the QiDao protocol and its name comes from miMatic, which represents MATIC on the QiDao protocol.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.90.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Yield Farming on QiDao">
+<meta property="og:description" content="Introduction QuickSwap is a fork of Uniswap that runs on the Polygon network. I have written about Polygon in previous posts and how much less expensive it is to transact with compared to Ethereum.
+QiDao is a protocol that allows users to lock tokens as collator and borrow MAI stable coin interest free. MAI is the stable coin used on the QiDao protocol and its name comes from miMatic, which represents MATIC on the QiDao protocol.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://crypto.rogerjbos.com/yield-farming-on-qidao/">
+        <link rel="stylesheet" href="https://crypto.rogerjbos.com/dist/site.css">
+        <link rel="stylesheet" href="https://crypto.rogerjbos.com/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121878757-3', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="https://crypto.rogerjbos.com/">Crypto Adventures</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" aria-label="Twitter" href="https://twitter.com/rogerjbos" rel="me" >
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/rogerjbos" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" aria-label="Stack Overflow" href="https://stackoverflow.com/users/7351478" rel="me">
+                                <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://linkedin.com/in/rogerjbos/" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:roger.john.bos@gmail.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a href="/about/">About</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/reports/trending.html">Tokens</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/reports/nav.html">NAV</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/glossary/">Glossary</a>
+    </li>
+
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Yield Farming on QiDao</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-11-01" itemprop="datePublished">Mon, Nov 1, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Roger J. Bos, CFA</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <h3 id="introduction">Introduction</h3>
+<p><a href="https://info.quickswap.exchange/home">QuickSwap</a> is a fork of <a href="https://uniswap.org/">Uniswap</a> that runs on the <a href="https://polygon.technology/">Polygon network</a>.  I have written about Polygon in previous posts and how much less expensive it is to transact with compared to Ethereum.</p>
+<p><a href="https://docs.mai.finance/">QiDao</a> is a protocol that allows users to lock tokens as collator and borrow <strong>MAI</strong> stable coin interest free.  <strong>MAI</strong> is the stable coin used on the QiDao protocol and its name comes from miMatic, which represents <em>MATIC</em> on the QiDao protocol.  <strong>Qi</strong> is the governance token for the QiDao protocol.</p>
+<p>The first step is to post some collateral and borrow some <strong>MAI</strong>.  On QiDao you do this by creating a vault, adding collateral, and then borrow <strong>MAI</strong> against that collateral.  In my case I have some <strong>CRV</strong> tokens on the Polygon network.  Ideally I would like to stake those <strong>CRV</strong> on Curve Finance to earn staking rewards, but that has to be done on Ethereum and I don&rsquo;t have enough <strong>CRV</strong> to justify the Ethereum gas fees, so I will deposit my <strong>CRV</strong> on QiDao, borrow <strong>MAI</strong>, and yield farm on Quickswap.  Here we go.</p>
+<h3 id="create-a-vault">Create a vault</h3>
+<p>There is a different vault for each eligible digital asset.  In the screen shot below you can see that I choose the <strong>CRV</strong> vault, so I can <em>Depsit</em> <strong>CRV</strong> and then I can <em>Brorrow</em> a portion of the collateral value in <strong>MAI</strong>, but I have to keep the collateral value above 130% of the amount of <strong>MAI</strong> that I borrowed.  When I am done with the <strong>MAI</strong>, I can <em>Repay</em> the loan.  There is no interest expense, but there is a 0.5% flat fee to repay the loan.  Once the loan is repaid, I can <em>Withdraw</em> my <strong>CRV</strong> to complete the cycle.  Of course, if I let the collateral value drop below 130% I am subject to liquidation, so I will have to keep an eye on that.</p>
+<p><img src="/img/qidao_vault.png" alt=""></p>
+<p>Let&rsquo;s look at a real example.  In deposited 34.4 <strong>CRV</strong> token with a collateral value of just under $175.  The app tells me I can borrow almost 135 <strong>MAI</strong>.</p>
+<p><img src="/img/qidao_borrow.png" alt=""></p>
+<h3 id="borrow-mai-from-your-vault">Borrow MAI from your vault</h3>
+<p>Next I click the <em>Borrow</em> button and borrow 72.6 <strong>MAI</strong>, which gives me a collateral to debt ratio of 240%.  This is way above the 130% minimum, so I am not at risk of being liquidated anytime soon.  I like to be conservative when investing with DeFi.</p>
+<p><img src="/img/qi_dao_vault_546.png" alt=""></p>
+<h3 id="add-liquidity-to-a-pool">Add Liquidity to a Pool</h3>
+<p>Now that I have some (borrowed) <strong>MAI</strong> in my wallet, I want to look for a pool to add liquidity to.  I went to <a href="https://quickswap.exchange/#/swap">Quickswap Exchange</a>, clicked on <em>Pool</em> and looked for a pair where I had both assets.  Most pools are <strong>MAI</strong> and something else.  I have some of my favorite <strong>MATIC</strong> tokens, so I choose the <strong>MATIC/miMATIC</strong> pool.  (Recall that <strong>miMATIC</strong> is another name for <strong>MAI</strong>).  I deposited the 72.5 <strong>MAI</strong> that I borrowed along with 36.6 <strong>MATIC</strong> that I had in my wallet.</p>
+<p><img src="/img/polyswap_add_liquidity.png" alt=""></p>
+<h3 id="get-lp-tokens">Get LP tokens</h3>
+<p>After I approve the transaction I end up with 41.49 <strong>MATIC/miMATIC</strong> LP tokens.</p>
+<p><img src="/img/polyswap_pool.png" alt=""></p>
+<h3 id="depost-lp-tokens-on-quickswap">Depost LP tokens on Quickswap</h3>
+<p>Once I have my LP tokens, I still need to deposit them before I can start to earn rewards.  As the screen shot shows, my 41.49 <strong>MATIC/miMATIC</strong> LP tokens are worth about $143 at the time of deposit.</p>
+<p><img src="/img/polyswap_liq_mining.png" alt=""></p>
+<p>The entire pool pays out 1.55 <strong>dQUICK</strong> reward tokens each day.  Given my share of the pool (which is very small), I should expect to earn (an estimated) 0.0001995 <strong>dQUICK</strong> per day.  With a <strong>dQUICK</strong> price of around $535.00 at the time of writing, I expect to earn about 10 cents per day, or $36.50 per year.  If I earn $36.5 on $143 invested, that is an APR of 25% which is not bad.  I probably won&rsquo;t get rich doing this, but it is a good way to support QuickSwap and the Polygon network.</p>
+<p>This process was a little bit more complicated than the other yield farming examples I wrote about earlier, mostly because it involves a lot of different tokens.  I suspect there is almost no limit to the types of convoluted processes which someone can dream up in DeFi.  QiDao is taking a different approach by offering interest-free loans and it will be interesting to see if this protocol becomes popular in the future.</p>
+<h3 id="disclaimer">Disclaimer</h3>
+<p>These posts are for informational and educational purposes only and should not be construed as investment advice or a recommendation to buy or sell any tokens.  In this series I am just outlining what I am doing to learn more about the cyrpto space.  Just because I am comfortable doing this, that does not necessarily mean these activities are suitable for you.  I have not received any compensation from any of the products or services mentioned herein.  Please do your own research and stay skeptical.  These markets are not normal.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/yield-farming/">Yield Farming</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Yield%20Farming%20on%20QiDao&url=https%3a%2f%2fcrypto.rogerjbos.com%2fyield-farming-on-qidao%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Yield%20Farming%20on%20QiDao&url=https%3a%2f%2fcrypto.rogerjbos.com%2fyield-farming-on-qidao%2f&summary="
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;" aria-label="Share on LinkedIn">
+               <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="https://crypto.rogerjbos.com/">Crypto Adventures</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2022 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://crypto.rogerjbos.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://crypto.rogerjbos.com/js/jquery.fitvids.js"></script>
+        <script src="https://crypto.rogerjbos.com/js/scripts.js"></script>
+    </body>
+</html>
+

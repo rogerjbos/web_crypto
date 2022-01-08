@@ -2,16 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://crypto.rogerjbos.com/about/</loc>
-  </url><url>
     <loc>https://crypto.rogerjbos.com/</loc>
+    <lastmod>2022-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://crypto.rogerjbos.com/faq/</loc>
-  </url><url>
-    <loc>https://crypto.rogerjbos.com/home/</loc>
-  </url><url>
-    <loc>https://crypto.rogerjbos.com/staking/</loc>
+    <loc>https://crypto.rogerjbos.com/post/</loc>
+    <lastmod>2022-01-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://crypto.rogerjbos.com/tags/</loc>
+    <lastmod>2022-01-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/yield-farming/</loc>
+    <lastmod>2022-01-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/yield-farming-on-osmosis/</loc>
+    <lastmod>2022-01-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/learning-about-crypto-on-rabbithole/</loc>
+    <lastmod>2021-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/yield-farming-on-curve-finance-using-fantom/</loc>
+    <lastmod>2021-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/how-to-crowdloan-on-polkadot/</loc>
+    <lastmod>2021-11-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/polkadot/</loc>
+    <lastmod>2021-11-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/dharma-polygon-on-off-ramp/</loc>
+    <lastmod>2021-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/yield-farming-on-qidao/</loc>
+    <lastmod>2021-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/yield-farming-on-kava/</loc>
+    <lastmod>2021-10-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/yield-farming-on-curve-finance-using-the-polygon-network/</loc>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/staking-oasis-tokens/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/yield-farming-on-shape-shift/</loc>
+    <lastmod>2021-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/about/</loc>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/glossary/</loc>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/prices/</loc>
   </url>
 </urlset>

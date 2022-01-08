@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Crypto Adventures</title>
-    <link>https://crypto.rogerjbos.com/</link>
-    <description>Recent content on Crypto Adventures</description>
+    <title>Yield Farming on Crypto Adventures</title>
+    <link>https://crypto.rogerjbos.com/tags/yield-farming/</link>
+    <description>Recent content in Yield Farming on Crypto Adventures</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 - Roger J. Bos, CFA</copyright>
-    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/tags/yield-farming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Yield Farming on Osmosis</title>
       <link>https://crypto.rogerjbos.com/yield-farming-on-osmosis/</link>
@@ -18,16 +18,6 @@
     </item>
     
     <item>
-      <title>Learning about crypto on Rabbithole</title>
-      <link>https://crypto.rogerjbos.com/learning-about-crypto-on-rabbithole/</link>
-      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/learning-about-crypto-on-rabbithole/</guid>
-      <description>Introduction Rabbithole is a website that helps you learn about crypto by completing tasks and earnings experience points. They claim to be a way to build up your crypto resume by learning by doing and being able to prove that you have completed certain skills.
-The Rabbithole platform partners with crypto projects to develop tasks provide rewards to their users. There are some tasks that can be completed without cost and there are some tasks that involve layer 2 networks that have low costs, but the majority of the tasks currently on Rabbithole are based on the Ethereum network and will costs $40+ in gas fees.</description>
-    </item>
-    
-    <item>
       <title>Yield Farming on Curve Finance using Fantom</title>
       <link>https://crypto.rogerjbos.com/yield-farming-on-curve-finance-using-fantom/</link>
       <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
@@ -35,24 +25,6 @@ The Rabbithole platform partners with crypto projects to develop tasks provide r
       <guid>https://crypto.rogerjbos.com/yield-farming-on-curve-finance-using-fantom/</guid>
       <description>Introduction Curve Finance is a DeFi protocol that works will many different blockchain networks. The top right menu item Network can be used to view available networks and choose which one to use. While many DeFi apps (called Dapps) only work on Ethereum, Curve Finance works on seven different blockchains:
  Ethereum Arbitrum Avalanche Fantom Harmony Polygon xDai  I recently posted yield farming on Curve Finance using Polygon and today I am going to talk about using Curve on the Fantom Network.</description>
-    </item>
-    
-    <item>
-      <title>How to crowdloan on Polkadot</title>
-      <link>https://crypto.rogerjbos.com/how-to-crowdloan-on-polkadot/</link>
-      <pubDate>Tue, 09 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/how-to-crowdloan-on-polkadot/</guid>
-      <description>Introduction Polkadot is a scalable sharded chain and the first protocol that provides a secure environment for cross-chain composability across multiple shards. Polkadot believes in a multi-blockchain world and hopes to host many of those blockchains in its ecosystem, which it calls parachains. Parachains allow other projects to build on Polkadot and get all their security and interoperability from the Polkadot system, but there are a limited number of parachains, so projects have to lease space on a parachain by posting Polkadot&amp;rsquo;s native governance tokoen DOT as collateral.</description>
-    </item>
-    
-    <item>
-      <title>Dharma - Polygon on &amp; off ramp</title>
-      <link>https://crypto.rogerjbos.com/dharma-polygon-on-off-ramp/</link>
-      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/dharma-polygon-on-off-ramp/</guid>
-      <description>Introduction On ramp refers to the process of converting fiat (USD) to crypto and off ramp is the reverse process of converting crypto back to fiat. Unless you live in El Salvador you will eventually need to get some of your crypto proceeds back into fiat so you can pay your taxes and other bills. So the goal is to find the most cost effective way to do so. The process differs for every exchange.</description>
     </item>
     
     <item>
@@ -86,48 +58,12 @@ I noticed that one of the centralized exchanges I use, Kraken, was offering a 20
     </item>
     
     <item>
-      <title>Staking Oasis tokens</title>
-      <link>https://crypto.rogerjbos.com/staking-oasis-tokens/</link>
-      <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/staking-oasis-tokens/</guid>
-      <description>Introduction The ROSE token is the native asset of the Oasis Proof-of-stake blockchain by Oasis Labs. It is one of the lesser-known projects that I believe has a lot of potential. I first started purchasing some about seven months ago and staked then via the Bitpie wallet. I purchased a few more a couple of months ago and found out that the exchane I purchased then on suspended withdraws on the ROSE network, so I could not transfer my new purchases to my Bitpie wallet&amp;ndash;they were stuck on the exchange.</description>
-    </item>
-    
-    <item>
       <title>Yield Farming on Shape Shift</title>
       <link>https://crypto.rogerjbos.com/yield-farming-on-shape-shift/</link>
       <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://crypto.rogerjbos.com/yield-farming-on-shape-shift/</guid>
       <description>Intro What is DeFi and Yield Farming? DeFi stands for Decentralized Finance and it represents financial services such as lending and borrowing that are provided over the blockchain. The decentralized part means that instead of having a bank stand between the lender and the borrower, taking a large cut, a protocal (some code and a blockchain) is the intermediary instead. The protocal still takes a cut, but it is much smaller than in TradFi (Traditional Finance).</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://crypto.rogerjbos.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/about/</guid>
-      <description>I am Roger J. Bos and I have a strong passion for finance, equities, and macroeconoimcs. In addition to my passion for traditional finance, I also have a passion for crypto and blockchain technology. On this site I blog about my learning adventure in crypto.</description>
-    </item>
-    
-    <item>
-      <title>Glossary</title>
-      <link>https://crypto.rogerjbos.com/glossary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/glossary/</guid>
-      <description>TEST PAGE</description>
-    </item>
-    
-    <item>
-      <title>Tokens</title>
-      <link>https://crypto.rogerjbos.com/prices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://crypto.rogerjbos.com/prices/</guid>
-      <description>TEST PAGE</description>
     </item>
     
   </channel>
