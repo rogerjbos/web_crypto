@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 - Roger J. Bos, CFA</copyright>
-    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/tags/yield-farming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/tags/yield-farming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yield Farming on ZilSwap</title>
+      <link>https://crypto.rogerjbos.com/yield-farming-on-zilswap/</link>
+      <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/yield-farming-on-zilswap/</guid>
+      <description>Introduction I have been a HODLer of the ZIL token from Zilliqa for over a year now. It hasn&amp;rsquo;t done very well, but I tend to hold my crypto projects long term because I hate paying capital gains taxes, so I just avoid that by not selling. I have been staking my ZIL on Moonlet and getting a 13.6% yield, but moonlet has a 14 day unbonding period when you unstake which I am not completely happy with.</description>
+    </item>
+    
     <item>
       <title>Yield Farming on Osmosis</title>
       <link>https://crypto.rogerjbos.com/yield-farming-on-osmosis/</link>
