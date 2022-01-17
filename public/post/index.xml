@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 - Roger J. Bos, CFA</copyright>
-    <lastBuildDate>Sun, 09 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Staking BitTorrent</title>
+      <link>https://crypto.rogerjbos.com/staking-bittorrent/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/staking-bittorrent/</guid>
+      <description>Introduction BitTorrent is probably a project most people have heard of, but don&amp;rsquo;t know much about. They have a host of product based on their decentralized torrent protocol and the fees are payable in their native BTT token. I had some BTT tokens, but they didn&amp;rsquo;t move much in price the entire time I held them and I finally sold them. I noticed recently that the BitTorrent team completed a redenomination of their token (1000 for 1) to increase supply to facilitate easier payments.</description>
+    </item>
+    
+    <item>
+      <title>Staying safe with RugDoc</title>
+      <link>https://crypto.rogerjbos.com/staying-safe-with-rugdoc/</link>
+      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/staying-safe-with-rugdoc/</guid>
+      <description>Introduction RugDoc is a site that applies risk ratings to DeFi sites. This site looks pretty interesting. It goes without saying that each person should do a certain amount of due diligence on any site that they invest their crypto with, but do most people know how to do due diligence?
+Here are some ideas to get you started:
+ Check out the background of the developers (prior projects or experience) Read the whitepaper and/or docs Read about the tokenomics (is there a max supply, how much has been issued so far) Check out the code on Github (how many people are working on it, when was it last updated, etc.</description>
+    </item>
+    
+    <item>
+      <title>Yield Farming on Orca</title>
+      <link>https://crypto.rogerjbos.com/yield-farming-on-orca/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/yield-farming-on-orca/</guid>
+      <description>Introduction I have been staking ZIL and SOL on the Moonlet wallet for about half a year now, getting somewhere around a 13% yield on each of them, but a few days ago I moved my ZIL tokens onto ZilSwap for a much higher yield (see this post for details).
+I have been have a problem with Moonlet on my phone recently in that every time I open it, I have to use the recover option to get to my wallet.</description>
+    </item>
+    
     <item>
       <title>Yield Farming on ZilSwap</title>
       <link>https://crypto.rogerjbos.com/yield-farming-on-zilswap/</link>
