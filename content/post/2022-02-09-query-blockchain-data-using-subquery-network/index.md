@@ -58,7 +58,7 @@ Once the build completes successfully, you are test it out in one of two ways: 1
 docker-compose pull
 docker-composr up
 ```
-You can issue both of those commands on the same line, but I like to break them up.  **If you get any error with the pull command, make sure the docker application is running.**  It is easy to forget that.  Once the docker instance is up and running, you will see your project start to record blocks.  At that point you can connect to localhost:3000 in your browser to access the playground where you can write your GraphQL query to access your data.
+You can issue both of those commands on the same line, but I like to break them up.  **If you get any error with the pull command, make sure the docker application is running.**  It is easy to forget that.  Once the docker instance is up and running, you will see your project start to record blocks.  At that point you can connect to localhost:3000 in your browser to access the [playground](https://explorer.subquery.network/subquery/AcalaNetwork/karura) where you can write your GraphQL query to access your data.
 
 If you have trouble following the steps in the exercises, you can download completed tutorials from SubQuery's github account, but I found that the localhost:3000 connection wasn't working with the tutorials I downloaded from Github.  Turns out the `docker-compose.yml` file is outdated on the Github site and that was causing a problem.  You can get the latest version of the `docker-compose.yml` file from any project that you create locally using the `subql init` command, then copy that file to the folder you downloaded from Github.  The file is generic so you don't need to change anything.  That should fix the connection problem.
 
