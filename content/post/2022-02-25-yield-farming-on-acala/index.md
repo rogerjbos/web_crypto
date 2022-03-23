@@ -20,10 +20,6 @@ Acala offers yield farming just like all the other DeFi projects, as shown below
 
 The TL;DR on crowdloans is that in the Polkadot ecosystem there are slots for 100 parachains and an auction system is used to determine who gets to use each of the 100 slots.  In this case, Polkadot is the layer 0 that provides network security and messaging and each of the 100 parachains are the layer 1 blockchains that interact with Polkadot and each other.  One of the main advantages of this system is that the blockchain security is inherited from the Polkadot layer 0, freeing up the layer 1 projects to spend time on more advanced features of their blockchain.  Each of the 100 slots are auction off for a 96-week lease.  The auction currency is **DOT**, which is the native token of Polkadot.  Most projects don't have the necessary **DOT** to secure an auction slot on their own, so they allow the public to contribute **DOT** which is locked up for the 96-week lease period.  When you contribute to a crowdloan, you are rewarded by the project with some of their native tokens.  Plus, at the end of the 96 week lease all contributor's get their **DOT** back.  So it doesn't cost the holder anything to contribute to the crowdload, you are just restricted from accessing the **DOT** during the 96 week period.
 
-Each crowdloan contributor received a nifty NFT:
-
-![](/img/acala-crownload-contributor.gif)
-
 ### Liquid Crowdloan DOT ###
 
 Different projects have handled their crowdloan process differently, but one nice feature of Acala is that they made their contributions liquid by creating a new token, **LCDOT** that is restricted for the 96 week period, but can be converted to regular **DOT** after the lease ends.  Thus, holders of **LCDOT** can sell them before the 96 weeks are up, if they need the liquidity, or they can use the **LCDOT** in DeFi apps to earn yield.  Because of the time-value of money, **LCDOT** trade at a discount to **DOT**, so that is another avenue that long term holders of **DOT** can take advantage of.  Even if you didn't contribute to Acala's crowdloan, you can swap **DOT** for **LCDOT** and get a 40%+ bonus, as shown below:
