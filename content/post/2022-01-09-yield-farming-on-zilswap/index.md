@@ -37,7 +37,7 @@ My problems started when I went to transfer the **SWTH** tokens from Gate.io to 
 
 For the first step I used the [Neon](https://neonwallet.com/) wallet.  The latest version of the Neo network is N3, so since Gate.io specified the Neo N2 network, I choose the __Legacy__ option when I created my Neon wallet.  I then sent my **SWTH** to my new Neon wallet address.
 
-For step 2 it was suggested to use the BSC network in Metamask or [Keplr](https://www.keplr.app/).  I used Keplr since I already had that wallet installed and I have never used the BSC network.  I connected the Demex site to my Keplr wallet and it opened into a nice looking dashboard that seems to offer a lot of functionality.  I didn't use any of that functionality, I just clicked on my address in the top left of the dashboard to putt up this screen:
+For step 2 it was suggested to use the BSC network in Metamask or [Keplr](https://www.keplr.app/).  I used Keplr since I already had that wallet installed and I have never used the BSC network.  I connected the Demex site to my Keplr wallet and it opened into a nice looking dashboard that seems to offer a lot of functionality.  I didn't use any of that functionality, I just clicked on my address in the top right of the dashboard to pull up this screen:
 
 ![](/img/demex.png)
 
