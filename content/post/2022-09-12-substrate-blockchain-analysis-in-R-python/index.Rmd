@@ -1,5 +1,5 @@
 ---
-title: "Substrate blockchain analysis in R"
+title: "Substrate blockchain analysis in R / Python"
 author: "Roger J. Bos"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
