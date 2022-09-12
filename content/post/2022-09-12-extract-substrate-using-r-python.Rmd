@@ -1,0 +1,401 @@
+---
+title: "Substrate blockchain analysis in R"
+author: "Roger J. Bos"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Substrate blockchain analysis in R}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This vignettes demonstrates the functionality of the *subscanr* package that facilitates substrate blockchain analysis in R.  By substrate we are referring to the Polkadot / Kusama (DotSama) ecosystem, which could include up to 200 different parachains.  
+
+The package provides an interface into three different indexing services in the DotSama ecosystem, along with a bonus section showing how to access on-chain data using Python code in R:
+
+- [Subscan](https://www.subscan.io/)
+- [Sub Query](https://subquery.network/)
+- [Polkaholic](https://polkaholic.io/#chains)
+- [Python Substrate Interface](https://github.com/polkascan/py-substrate-interface)
+
+## Installation
+
+You can install the `subscanr` package using devtools (or remotes) as follows:
+
+```{r, eval = FALSE}
+library(devtools)
+install_github("rogerjbos/subscanr")
+```
+
+Once installed, you can load the package.  The package comes with a number of functions which are detailed below, and it also comes with a few objects and helper functions.  I won't cover all of them, but the `tokens` object is useful because it shows the number of decimal places used for each token.  This object is update manually so it may be always be as up-to-date as it should be!
+
+```{r}
+library(subscanr)
+tokens
+```
+
+## Subscan
+
+Subscan extracts blockchain data from all the available parachains and stores the data in its own database that users can access via their (free) [API](https://support.subscan.io/#introduction).  You have to request a key [here](https://pro.subscan.io/login).  I will show some examples of pulling data from the Subscan API below, but if you have any questions, the best place to ask them is in their [maxtrix site](https://app.element.io/#/room/#subscan:matrix.org).
+
+Subscan currently covers `r nrow(endpoints)` different chains, which are stored in the `endpoints` variable.  You can use the get_endpoint() function to get the host address:
+
+```{r}
+head(subscanr::endpoints)
+get_endpoint("Acala")
+```
+
+The primary function is `get_subscan_events`, which we will call using the `extract = FALSE` parameter.  The functions returns two objects.  The `core_data` object lists the general details of each requested event, such as the block number, extrinsic_hash, and timestamp.  The `params` object contains the actual details on the event, but it is in JSON format so it is more difficult to read.
+
+```{r}
+tmp <- get_subscan_events(nobs = 10, network = 'Karura', module = 'dex', call = 'Swap', extract = FALSE)
+
+# First few lines of the core_data
+head(tmp$core_data)
+
+# Parameters for the first event
+tmp$params[1]
+```
+The `get_subscan_events` function can be called for any endpoint, but the format of the `params` object will be different for every module and chain.  My works involves the `Acala` and `Karura` chains, so I have coded an `extract` function to re-format the JSON output and add it to the `core_data` object, but this has only been implemented for `Acala` and `Karura`.  If you view the source code you can see how I extract the data and modify that for the chain you are interested.  
+
+The default value of the `extract` parameter is TRUE, so if you call the function again without that parameter, you will see the new `core_data` object, which has been augmented with the JSON data extracted from the `params` column.
+
+```{r}
+tmp <- get_subscan_events(nobs = 10, network = 'Karura', module = 'dex', call = 'Swap')
+
+# First few lines of the core_data
+head(tmp$core_data)
+```
+
+The Subscan API limits each call to 100 rows of data, so if you set `nobs` to greater than 100 the function will use pagination to make multiple calls and aggregate the data, waiting a few seconds every few calls so as to not exceed the API limit for free data.  If you leave the `module` and / or `call` parameters empty the function will return all blockchain events.  That will give you an idea of what options are available for a specific chain so you can specify them and narrow your search.
+
+```{r}
+tmp <- get_subscan_events(nobs = 300, network = 'Karura', module = '', call = '', extract = FALSE)
+
+# Module and event types returned for the specified chain
+unique(tmp$core_data$module_id)
+unique(tmp$core_data$event_id)
+```
+
+There are many other functions you can run.  To save space I won't list the output of all of them, but I will list them below so you can try them out on your own.
+
+```{r, eval = FALSE}
+get_subscan_token()
+get_subscan_token(network = 'Acala')
+get_subscan_accounts(network = 'Acala')
+get_subscan_account_tokens(network = 'Acala', addr = '23M5ttkmR6Kco5p3LFGKMpMv4zvLkKdUQWW1wGGoV8zDX3am')
+get_subscan_metadata(network = 'Acala')
+get_subscan_extrinsic(extrinsic = '398539-2')
+get_subscan_price()
+get_subscan_price_history(network = 'Darwinia', start = '2021-11-01', end = '2021-11-02')
+get_subscan_currencies('Polkadot')
+get_subscan_price_converter(network = 'Polkadot', time = 957105, value = 1000, from = 'USD', quote = 'DOT')
+```
+
+## Sub Query
+
+Sub Query takes a different approach.  They provide a framework where someone can create a TypeScript project that collects and indexes blockchain data and Sub Query will host that project.  Then users can use `GraphQL` to query the indexed data from that project.
+
+Sub Query has a search feature to find projects for a specific chain you are interested.  `Acala` and `Karura` has many different projects, a short list of which can be found [here](https://acala.rogerjbos.com/about/).  For example Karura has a project called `karura-tokens`.  In the example below we use the `get_query` function to pass a `url` and a `query` to a Sub Query project and view the returned data.
+
+```{r}
+library(ghql)
+x <- GraphqlClient$new()
+
+url <- 'https://api.subquery.network/sq/AcalaNetwork/karura-tokens'
+query <- 'query { accountBalances (first: 6) { nodes { id accountId tokenId total } } }'
+tmp <- get_query(url, query)
+head(tmp)
+```
+The function `get_query` is just an example of how to use `GraphQL` to execute a simple query.  A better example is the `get_graph` function which takes an endpoint, method, edges, and window as parameters.  The `endpoint` is the url of the Sub Query project's GraphQL server and the `window` is the number of days of history to query.  
+
+The `method` and `edges` can be found from the `schema.graphql` file within the associated project. [Here](https://github.com/AcalaNetwork/acala-dex-subql/blob/master/schema.graphql) of a `schema.graphql` file.  In the example `Swap` is automatically converted to `swaps`, so that is what you put in for `method` and the `edges` are the fields you would like to query, where the `schema.graphql` lists all the possible fields for each type.  
+
+Sub Query also only returns 100 rows per call, so the `get_graph` function automatically uses pagination to collect and aggregate the output into one return object.
+
+```{r}
+endpoint <- "https://api.subquery.network/sq/AcalaNetwork/acala-dex"
+method <- "swaps"
+edges <- "id address {id} pool {id}  token0 {id} token1 {id} token0InAmount token1OutAmount tradePath price0 price1 block {id} extrinsic {id} timestamp"
+res <- get_graph(endpoint, method, edges, window = 1)
+nrow(res)
+head(res)
+```
+
+Now for the real functions!  The first part of the function name describes the data that the function returns and the last part indicates which Sub Query project it comes from, so this function get the `Swaps` data from `acala-dex`.  For network you can use `Acala` or `Karura`.  Those are the only two implemented so far.  To include other parachains, someone would first have to create the TypeScript project to index the data.  Since each parachains stores their data in a different way, you would realy need to write a custom function for each parachain, which can make cross-chain analysis difficult in the DotSama ecosystem.
+
+The `window` parameters indicates how many days history you would like and the `endpage` parameters specifies the max number of observations, where each page returns 100 observations.  The default is 20,000, which should be enough for most calls.  I set a lower number in these examples so it runs faster since they are just examples.
+
+```{r}
+tmp <- getSwaps_acala_dex(network = "Acala", window = 1)
+head(tmp)
+```
+
+Here is a function that pulls the `daily account balance` data from the `acala-token` project.
+
+```{r}
+tmp <- getDailyAccountBalance_acala_token(network = "Acala", window = 1, endpage = 1)
+head(tmp)
+```
+
+The next example shows the daily aggregated loan data from the `acala-loans` project.  This is known as the Honzon protocol.  The `depositAmount` is the amount of `collaeral` that was deposited, and `depositVolumeUSD` shows the value in USD.  The depositors are allowed to mint a certain amount of stablecoin backed by that collateral and the amount minted is shown in the `debitAmount`.
+
+```{r}
+tmp <- getLoansDailyCollateral_acala_loan(network = "Acala", window = 1)
+head(tmp)
+```
+```
+Here are some other examples you can try on your own.
+
+```{r, eval = FALSE}
+tmp <- getDailyPools_acala_dex(network = "Acala", window = 1)
+tmp <- getLoansCollateralParams_acala_loan(network = "Acala")
+tmp <- getLoansDailyPositions_acala_loan(network = "Acala", window = 1)
+tmp <- getLiquidateUnsafeCDP_acala_loan(network = "Acala", window = 30)
+tmp <- getDailyAccountBalance_acala_token(network = "Acala", window = 1, endpage = 1)
+tmp <- getMint_acala_homa(network = "Acala", window = 1, endpage = 1)
+tmp <- getRequestedRedeem_acala_homa(network = "Acala", window = 1, endpage = 1)
+tmp <- getRedeemRequestCancelled_acala_homa(network = "Acala", window = 1, endpage = 1)
+tmp <- getRedeemByUnbond_acala_homa(network = "Acala", window = 1, endpage = 1)
+tmp <- getRedeemByFastMatch_acala_homa(network = "Acala", window = 1, endpage = 1)
+tmp <- getPoolStats_acala_dex(network = "Acala", window = 1)
+tmp <- getTokenDailyData_acala_dex(network = "Acala", window = 1)
+tmp <- getDailyPool_acala_dex(network = "Acala", window = 1)
+```
+
+
+## Polkaholic
+
+Polkaholic provides an [API](https://docs.polkaholic.io/#introduction) for accessing their data.  You have to request a key [here](https://polkaholic.io/login).  I will show some examples of pulling data from the Polkaholic API below, but if you have any questions, the best place to ask them is in their [maxtrix site](https://app.element.io/#/room/#subscan:matrix.org).
+
+Polkaholic currently covers 60 different chains, which you can view using the `get_polkaholic_chains` function.  When interacting with their API, you can use either the `id` or the `chainID`.
+
+```{r}
+tmp <- get_polkaholic_chains()
+head(tmp)
+```
+As an example, we will pull up the first five dex Swap transaction for the Karura parachain between July 1st and July 2nd.
+
+```{r}
+tmp <- get_polkaholic_events(chain = "karura", module = "dex", call = 'Swap', startDate='2022-07-01', endDate='2022-07-02', nobs = 5)
+head(tmp)
+```
+
+In addition to specifying the `startDate` and `endDate`, you can also specify the `startBlock` and `endBlock`.
+
+```{r}
+tmp <- get_polkaholic_events(chain = "karura", module = "dex", call = 'Swap', startBlock=1000000, endBlock=1000015, nobs = 5)
+head(tmp)
+```
+
+Polkaholic does not use pagination, but you can request up to 100,000 rows at a time using the `nobs` parameter.  If you need more than that, you will have to use `startDate` and `endDate` (or `startblock` and `endBlock`) to make multiple calls and piece the data together yourself.
+
+Notice that Polkaholic does not return the transaction details (the `params` object from Subscan), instead, you have to use the `extrinsic_hash` and manually retrieve the details using the `get_polkaholic_transaction` function.
+
+
+```{r}
+tmp <- get_polkaholic_transaction(TxHash = '0x079192270cfd80cebf03c54eb59dd48528b6e1506a697ed6c11a832deb193bd4')
+head(tmp)
+```
+
+If you have a transaction hash and all you need to know if the associated block number, you can use the `get_polkaholic_hash` function for that.
+
+```{r}
+get_polkaholic_hash(TxHash = '0x079192270cfd80cebf03c54eb59dd48528b6e1506a697ed6c11a832deb193bd4')
+```
+
+To make this easier, I implemented the `extract_polkaholic_events` function to query, extract, and aggregate the data, but so far this has only been implemented for dex Swaps, so it is pretty limited.  Again, looking at the code it should be easy to see how to extend it for more modules.
+
+```{r}
+tmp1 <- get_polkaholic_events(chain = "karura", module = "dex", call = 'Swap', startBlock=1, endBlock=2208550, nobs = 10)
+tmp2 <- extract_polkaholic_events(tmp1)
+head(tmp2)
+```
+
+Finally, if you have a transaction hash and all you need to know if the associated block number, you can use the `get_polkaholic_hash` function for that.
+
+```{r}
+get_polkaholic_hash(TxHash = '0x079192270cfd80cebf03c54eb59dd48528b6e1506a697ed6c11a832deb193bd4')
+```
+
+## Python Substrate Interface
+
+Subscan, Sub Query, and Polkaholic are all good for collecting data that has already been indexed, but if you data directly from the substrate blockchain, most people use the polkadot{js} API, which is written in Javascript.  While there are no tools like that written in R, the [Polkascan](https://explorer.polkascan.io/) team created a python library to interact with substrate and it works really well.  Thanks to the [reticulate](https://rstudio.github.io/reticulate/) package we can run python code within R.  I will show some examples below, but more documentation on it can be found [here](https://polkascan.github.io/py-substrate-interface/).  If you have any questions on using it, the best place to ask is in the the [Substrate Stack Exchange](https://substrate.stackexchange.com/).  After installing `reticulate` in R and `py-substrate-interface` in python, you need to load the package into R:
+
+```{r}
+library(reticulate)
+```
+
+Then define your python function.  In this example we will use the `system.Account` module to get the number of tokens held by an account.  In this example we are not specify a block number, so it gives us the tip by default (the latest block).
+
+```{python}
+from substrateinterface import SubstrateInterface
+
+import pandas as pd
+
+def get_Balance(chain, addr):
+    if chain=="Polkadot":
+        url = 'wss://polkadot.api.onfinality.io/public-ws'
+        decimals = 10
+    elif chain=="Kusama":
+        url = 'wss://kusama.api.onfinality.io/public-ws'
+        decimals = 12
+    elif chain=="Karura":
+        url = 'wss://karura.polkawallet.io'
+        decimals = 12
+    else:
+        url = 'wss://acala-rpc-0.aca-api.network'
+        decimals = 12
+        
+    substrate = SubstrateInterface(url)
+    balance_info = substrate.get_runtime_state(
+        module='System',
+        storage_function='Account',
+        params=[addr]).get('result')
+    balance = balance_info.get('data').get('free', 0)
+    print(f"Address {addr} had {balance / 10**decimals} DOT.")
+    
+get_Balance(chain = "Polkadot", addr = '14QV6hfAiXyb5LBajUqWR9CrQKxfQZMkBiERpQFuoj7YBqis')
+
+```
+
+In this example we are querying the Acala oracle to get the token prices as of a certain block number.  In order to query data as of a certain block number, we need to know the block hash, which we can get from the `get_block_hash` function.  In substrate, pricing data always has 18 decimal places, so we adjust the price for that.
+
+```{python}
+from substrateinterface import SubstrateInterface
+
+import pandas as pd
+
+def getOraclePrices(chain, block_id):
+    if chain=="Karura":
+        url = 'wss://karura.polkawallet.io'
+    else:
+        url = 'wss://acala-rpc-0.aca-api.network'
+    
+    substrate = SubstrateInterface(url)
+    hash = substrate.get_block_hash(block_id)
+    timestamp = substrate.query(module='Timestamp',storage_function='Now',
+      block_hash=hash).value
+    p = substrate.query_map('AcalaOracle', 'Values', block_hash = hash)
+    data = []
+    for res in p:
+        outi = {"chain": chain, "token": str(res[0].value), "price": 
+          res[1].value['value'] / 10**18}
+        data.append(outi)
+    
+    out = pd.DataFrame(data)
+    return out
+
+tmp = getOraclePrices(chain='Karura', block_id=2000000)
+print(tmp)
+
+```
+
+Substrate is somewhat unique in that each network has a different address format, but it is easy to convert an address format from one parachain to another by way of the public key.  The polkadot{js} API has an `encodeAddress` function that does the conversion in one call, but using `py-substrate-interface` we will use the `ss58_decode` function to convert the origin address to its public key and then use the `ss58_encode` function to convert that public key into the destination address.  Each network has a `ss58_format`.  In this example we are converting from Substrate, which is ss58_format 42, to Acala Network, which is ss58_format 10.
+
+```{python}
+from substrateinterface import SubstrateInterface
+from substrateinterface.utils.ss58 import ss58_decode, ss58_encode
+
+# Convert ss58 address from one chain to another 
+# (i.e. Substrate=42, Polkadot=0, Kusama=2, Acala=10, Karura=8)
+def ss58_convert(addr, fromChain, toChain):
+  pk = ss58_decode(addr, valid_ss58_format = int(fromChain))
+  output = ss58_encode(pk, ss58_format = int(toChain))
+  return output
+
+addr = "5EChUec3ZQhUvY1g52ZbfBVkqjUY9Kcr6mcEvQMbmd38shQL"
+newAddress = ss58_convert(addr, fromChain=42, toChain=10)
+print(f"Substrate address {addr} \n translates to Acala address {newAddress}.")
+
+```
+
+In this example we are getting the account balance as of a specific block number.  We also use the `pandas.to_datetime` function to convert the block timestamp into a human readable format.
+
+```{python}
+from substrateinterface import SubstrateInterface
+
+import pandas as pd
+# import numpy as np
+from datetime import date
+
+def get_fees(url, acct, block_id):
+    substrate = SubstrateInterface(url)
+    hash = substrate.get_block_hash(int(block_id))        
+    timestamp = substrate.query(module='Timestamp',storage_function='Now',
+      block_hash=hash).value
+    block = substrate.get_block_number(hash)
+    balance_info = substrate.get_runtime_state(
+        module='System',
+        storage_function='Account',
+        params=[acct],
+        block_hash=hash
+    ).get('result')
+    balance = balance_info.get('data').get('free', 0) / 10**12
+    out = {"Block": block, "Time": timestamp, 'Balance': balance}
+    return out
+            
+url = 'wss://acala-rpc-0.aca-api.network'
+acct = '23M5ttkmR6KcoTAAE6gcmibnKFtVaTP5yxnY8HF1BmrJ2A1i'
+block_id = '2100000'
+
+fees = get_fees(url=url, acct=acct, block_id=block_id)
+fees['Time'] = pd.to_datetime(fees['Time'],unit='ms')
+print(fees)
+
+```
+
+In the final example we define a function that makes two calls, one to `tokens.TotalIssuance` and a second one to `homa.StakingLedgers`.  The latter refers to Acala Network's Homa liquid staking protocol, which converts a staked token to a liquid derivative to allow the token to be used in DeFi while it is being staked.  This function also takes an array of block history, so it shows the values as of multiple block numbers.
+
+```{python}
+from substrateinterface import SubstrateInterface
+
+import pandas as pd
+from datetime import date
+import json
+
+def getTotalIssuance(network, block_history):
+    if network.lower() == 'acala':
+        url = 'wss://acala-rpc-0.aca-api.network'
+        token = 'LDOT'
+        decimals = 10
+    else: 
+        url = 'wss://karura.polkawallet.io'      
+        token = 'LKSM'
+        decimals = 12
+    
+    data = []
+    substrate = SubstrateInterface(url)
+    for j in block_history:
+        hash = substrate.get_block_hash(block_id = int(j))
+        liquid = substrate.query(module='Tokens',storage_function='TotalIssuance', 
+          params = [{'Token': token}], block_hash = hash).value / 10**decimals
+        
+        try:
+            homa = substrate.query_map(module='Homa',storage_function='StakingLedgers', 
+              block_hash = hash)
+            amount = 0
+            for res in homa:
+                amount += res[1].value['bonded']
+        except:
+            amount = 0
+        outi = {"network": network, "Block": j, 'liquid_amount': liquid, 
+          'staking_amount': amount / 10**decimals}
+        data.append(outi)
+    out = pd.DataFrame(data)
+    return out
+
+tmp = getTotalIssuance(network="Acala", block_history=[2000000,2100000,2200000])
+print(tmp)
+
+```
+
+I hope this vignette has demonstrate the wide variety of blockchain data you can pull into R.  Once you have the data in R there are endless statistical and graphing routines which are available to analyze the data and gleam insights based on the on-chain data.
+
