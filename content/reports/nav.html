@@ -62,6 +62,7 @@ if (window.hljs) {
 
 
 
+
 <style type="text/css">
 .main-container {
   max-width: 940px;
@@ -82,6 +83,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -170,7 +174,7 @@ pre code {
 </div>
 
 
-<p>Updated @ 9AM &amp; 4PM EST. Last Updated 2022-03-23 09:00:17</p>
+<p>Updated @ 9AM every trading day. Last Updated 2022-09-12 09:00:24</p>
 <div id="exchange-traded-price-versus-net-asset-value-nav" class="section level4">
 <h4>Exchange traded price versus Net Asset Value (NAV)</h4>
 <p>A product’s NAV is the value of its underlying holdings. Most exchange traded products trade close to their NAV. This is because Authorized Participants (APs) create new shares or redeem shares in order to keep the trade price close to the NAV. This does not happen with the Grayscale products because they are trusts instead of ETFs, so they can trade significantly above or below their NAV. For a long time they traded significantly above their NAV. Lately, they have been trading significantly below their NAV. It makes sense to keep an eye on the NAV of these products if you are considering buying or selling them.</p>
@@ -204,98 +208,13 @@ ETCG
 Grayscale<u> Ethereum Classic Trust </u>
 </td>
 <td style="text-align:right;">
-15.49
+12.80
 </td>
 <td style="text-align:right;">
-40.97
+33.11
 </td>
 <td style="text-align:right;">
--62.19
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-GDLC
-</td>
-<td style="text-align:right;">
-Grayscale<u> Digital Largecap Trust </u>
-</td>
-<td style="text-align:right;">
-21.28
-</td>
-<td style="text-align:right;">
-50.16
-</td>
-<td style="text-align:right;">
--57.58
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-GXLM
-</td>
-<td style="text-align:right;">
-Grayscale<u> Litecoin Trust </u>
-</td>
-<td style="text-align:right;">
-6.21
-</td>
-<td style="text-align:right;">
-10.92
-</td>
-<td style="text-align:right;">
--43.13
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-GBTC
-</td>
-<td style="text-align:right;">
-Grayscale<u> Bitcoin Trust </u>
-</td>
-<td style="text-align:right;">
-28.75
-</td>
-<td style="text-align:right;">
-39.36
-</td>
-<td style="text-align:right;">
--26.96
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-ZCSH
-</td>
-<td style="text-align:right;">
-Grayscale<u> Zcash Trust </u>
-</td>
-<td style="text-align:right;">
-11.82
-</td>
-<td style="text-align:right;">
-15.84
-</td>
-<td style="text-align:right;">
--25.38
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-BCHG
-</td>
-<td style="text-align:right;">
-Grayscale<u> Bitcoin Cash Trust </u>
-</td>
-<td style="text-align:right;">
-2.49
-</td>
-<td style="text-align:right;">
-3.32
-</td>
-<td style="text-align:right;">
--25.00
+-61.34
 </td>
 </tr>
 <tr>
@@ -306,13 +225,81 @@ BITW
 Bitwise<u> 10 Crypto Index Fund </u>
 </td>
 <td style="text-align:right;">
-31.41
+12.46
 </td>
 <td style="text-align:right;">
-41.29
+21.78
 </td>
 <td style="text-align:right;">
--23.93
+-42.79
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+GDLC
+</td>
+<td style="text-align:right;">
+Grayscale<u> Digital Largecap Trust </u>
+</td>
+<td style="text-align:right;">
+8.94
+</td>
+<td style="text-align:right;">
+14.34
+</td>
+<td style="text-align:right;">
+-37.66
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+GXLM
+</td>
+<td style="text-align:right;">
+Grayscale<u> Litecoin Trust </u>
+</td>
+<td style="text-align:right;">
+3.51
+</td>
+<td style="text-align:right;">
+5.55
+</td>
+<td style="text-align:right;">
+-36.76
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+GBTC
+</td>
+<td style="text-align:right;">
+Grayscale<u> Bitcoin Trust </u>
+</td>
+<td style="text-align:right;">
+13.45
+</td>
+<td style="text-align:right;">
+20.61
+</td>
+<td style="text-align:right;">
+-34.74
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+BCHG
+</td>
+<td style="text-align:right;">
+Grayscale<u> Bitcoin Cash Trust </u>
+</td>
+<td style="text-align:right;">
+0.88
+</td>
+<td style="text-align:right;">
+1.19
+</td>
+<td style="text-align:right;">
+-26.13
 </td>
 </tr>
 <tr>
@@ -323,13 +310,30 @@ ETHE
 Grayscale<u> Ethereum Trust </u>
 </td>
 <td style="text-align:right;">
-24.62
+13.01
 </td>
 <td style="text-align:right;">
-29.71
+17.31
 </td>
 <td style="text-align:right;">
--17.13
+-24.84
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+ZCSH
+</td>
+<td style="text-align:right;">
+Grayscale<u> Zcash Trust </u>
+</td>
+<td style="text-align:right;">
+4.53
+</td>
+<td style="text-align:right;">
+5.80
+</td>
+<td style="text-align:right;">
+-21.90
 </td>
 </tr>
 <tr>
@@ -340,13 +344,13 @@ HZEN
 Grayscale<u> Horizen Trust </u>
 </td>
 <td style="text-align:right;">
-3.51
+1.40
 </td>
 <td style="text-align:right;">
-4.13
+1.54
 </td>
 <td style="text-align:right;">
--15.01
+-9.09
 </td>
 </tr>
 <tr>
@@ -357,13 +361,13 @@ GXLM
 Grayscale<u> Stellar Lumens Trust </u>
 </td>
 <td style="text-align:right;">
-19.95
+9.95
 </td>
 <td style="text-align:right;">
-19.18
+10.60
 </td>
 <td style="text-align:right;">
-4.01
+-6.13
 </td>
 </tr>
 </tbody>
@@ -397,13 +401,13 @@ Price
 ADA
 </td>
 <td style="text-align:right;">
-1.0218765
+1.0455933
 </td>
 <td style="text-align:right;">
 cardano
 </td>
 <td style="text-align:right;">
-0.985186
+0.515185
 </td>
 </tr>
 <tr>
@@ -411,13 +415,13 @@ cardano
 ATOM
 </td>
 <td style="text-align:right;">
-0.0092027
+0.0090479
 </td>
 <td style="text-align:right;">
 cosmos
 </td>
 <td style="text-align:right;">
-27.670000
+16.140000
 </td>
 </tr>
 <tr>
@@ -425,13 +429,13 @@ cosmos
 AVAX
 </td>
 <td style="text-align:right;">
-0.0078286
+0.0088152
 </td>
 <td style="text-align:right;">
 avalanche-2
 </td>
 <td style="text-align:right;">
-84.510000
+21.800000
 </td>
 </tr>
 <tr>
@@ -439,13 +443,13 @@ avalanche-2
 DOT
 </td>
 <td style="text-align:right;">
-0.0344550
+0.0354314
 </td>
 <td style="text-align:right;">
 polkadot
 </td>
 <td style="text-align:right;">
-20.470000
+7.930000
 </td>
 </tr>
 <tr>
@@ -453,13 +457,13 @@ polkadot
 ETH
 </td>
 <td style="text-align:right;">
-0.0038141
+0.0037193
 </td>
 <td style="text-align:right;">
 ethereum
 </td>
 <td style="text-align:right;">
-2964.710000
+1746.220000
 </td>
 </tr>
 <tr>
@@ -467,13 +471,13 @@ ethereum
 LINK
 </td>
 <td style="text-align:right;">
-0.0148833
+0.0144448
 </td>
 <td style="text-align:right;">
 chainlink
 </td>
 <td style="text-align:right;">
-15.410000
+8.010000
 </td>
 </tr>
 <tr>
@@ -481,13 +485,13 @@ chainlink
 MATIC
 </td>
 <td style="text-align:right;">
-0.2189702
+0.2619349
 </td>
 <td style="text-align:right;">
 matic-network
 </td>
 <td style="text-align:right;">
-1.520000
+0.917225
 </td>
 </tr>
 <tr>
@@ -495,13 +499,13 @@ matic-network
 SOL
 </td>
 <td style="text-align:right;">
-0.0101938
+0.0108072
 </td>
 <td style="text-align:right;">
 solana
 </td>
 <td style="text-align:right;">
-92.440000
+37.860000
 </td>
 </tr>
 <tr>
@@ -509,13 +513,13 @@ solana
 XBT
 </td>
 <td style="text-align:right;">
-0.0006042
+0.0005916
 </td>
 <td style="text-align:right;">
 bitcoin
 </td>
 <td style="text-align:right;">
-42338.000000
+22353.000000
 </td>
 </tr>
 <tr>
@@ -523,13 +527,13 @@ bitcoin
 XLT
 </td>
 <td style="text-align:right;">
-0.0022212
+0.0021972
 </td>
 <td style="text-align:right;">
 litecoin
 </td>
 <td style="text-align:right;">
-120.400000
+61.880000
 </td>
 </tr>
 </tbody>
@@ -563,13 +567,13 @@ Crypto Price
 XBT
 </td>
 <td style="text-align:right;">
-0.0004157
+0.0003926
 </td>
 <td style="text-align:right;">
 bitcoin
 </td>
 <td style="text-align:right;">
-42338.000000
+22353.000000
 </td>
 </tr>
 <tr>
@@ -577,27 +581,13 @@ bitcoin
 ETH
 </td>
 <td style="text-align:right;">
-0.0025568
+0.0024795
 </td>
 <td style="text-align:right;">
 ethereum
 </td>
 <td style="text-align:right;">
-2964.710000
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-ADA
-</td>
-<td style="text-align:right;">
-0.7249562
-</td>
-<td style="text-align:right;">
-cardano
-</td>
-<td style="text-align:right;">
-0.985186
+1746.220000
 </td>
 </tr>
 <tr>
@@ -605,27 +595,55 @@ cardano
 SOL
 </td>
 <td style="text-align:right;">
-0.0066253
+0.0070062
 </td>
 <td style="text-align:right;">
 solana
 </td>
 <td style="text-align:right;">
-92.440000
+37.860000
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-LINK
+ADA
 </td>
 <td style="text-align:right;">
-0.0100852
+0.6877055
 </td>
 <td style="text-align:right;">
-chainlink
+cardano
 </td>
 <td style="text-align:right;">
-15.410000
+0.515185
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+AVAX
+</td>
+<td style="text-align:right;">
+0.0056050
+</td>
+<td style="text-align:right;">
+avalanche
+</td>
+<td style="text-align:right;">
+21.800000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+DOT
+</td>
+<td style="text-align:right;">
+0.0206746
+</td>
+<td style="text-align:right;">
+polkadot
+</td>
+<td style="text-align:right;">
+7.930000
 </td>
 </tr>
 <tr>
@@ -633,27 +651,13 @@ chainlink
 XLT
 </td>
 <td style="text-align:right;">
-0.0015009
+0.0014946
 </td>
 <td style="text-align:right;">
 litecoin
 </td>
 <td style="text-align:right;">
-120.400000
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-UNI
-</td>
-<td style="text-align:right;">
-0.0133319
-</td>
-<td style="text-align:right;">
-uniswap
-</td>
-<td style="text-align:right;">
-366.360000
+61.880000
 </td>
 </tr>
 <tr>
@@ -661,13 +665,41 @@ uniswap
 BCH
 </td>
 <td style="text-align:right;">
-0.0004353
+0.0003978
 </td>
 <td style="text-align:right;">
 bitcoin cash
 </td>
 <td style="text-align:right;">
-42338.000000
+132.470000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+LINK
+</td>
+<td style="text-align:right;">
+0.0100156
+</td>
+<td style="text-align:right;">
+chainlink
+</td>
+<td style="text-align:right;">
+8.010000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+UNI
+</td>
+<td style="text-align:right;">
+0.0146584
+</td>
+<td style="text-align:right;">
+uniswap
+</td>
+<td style="text-align:right;">
+6.840000
 </td>
 </tr>
 </tbody>
@@ -700,13 +732,13 @@ Crypto Price
 GBTC
 </td>
 <td style="text-align:right;">
-0.0009297
+0.0009218
 </td>
 <td style="text-align:right;">
 bitcoin
 </td>
 <td style="text-align:right;">
-42338.000000
+22353.000000
 </td>
 </tr>
 <tr>
@@ -714,13 +746,13 @@ bitcoin
 BCHG
 </td>
 <td style="text-align:right;">
-0.0090657
+0.0089694
 </td>
 <td style="text-align:right;">
 bitcoin cash
 </td>
 <td style="text-align:right;">
-366.360000
+132.470000
 </td>
 </tr>
 <tr>
@@ -728,13 +760,13 @@ bitcoin cash
 ETHE
 </td>
 <td style="text-align:right;">
-0.0100204
+0.0099139
 </td>
 <td style="text-align:right;">
 ethereum
 </td>
 <td style="text-align:right;">
-2964.710000
+1746.220000
 </td>
 </tr>
 <tr>
@@ -742,13 +774,13 @@ ethereum
 LTCN
 </td>
 <td style="text-align:right;">
-0.0906571
+0.0896936
 </td>
 <td style="text-align:right;">
 litecoin
 </td>
 <td style="text-align:right;">
-120.400000
+61.880000
 </td>
 </tr>
 <tr>
@@ -756,13 +788,13 @@ litecoin
 ETCG
 </td>
 <td style="text-align:right;">
-0.8664523
+0.8565506
 </td>
 <td style="text-align:right;">
 ethereum-classic
 </td>
 <td style="text-align:right;">
-47.290000
+38.660000
 </td>
 </tr>
 <tr>
@@ -770,13 +802,13 @@ ethereum-classic
 HZEN
 </td>
 <td style="text-align:right;">
-0.0916436
+0.0906696
 </td>
 <td style="text-align:right;">
 zencash
 </td>
 <td style="text-align:right;">
-45.100000
+16.930000
 </td>
 </tr>
 <tr>
@@ -784,13 +816,13 @@ zencash
 GXLM
 </td>
 <td style="text-align:right;">
-92.4126038
+91.4304045
 </td>
 <td style="text-align:right;">
 stellar
 </td>
 <td style="text-align:right;">
-0.207505
+0.115976
 </td>
 </tr>
 <tr>
@@ -798,13 +830,13 @@ stellar
 ZCSH
 </td>
 <td style="text-align:right;">
-0.0898657
+0.0889106
 </td>
 <td style="text-align:right;">
 zcash
 </td>
 <td style="text-align:right;">
-176.250000
+65.270000
 </td>
 </tr>
 </tbody>
