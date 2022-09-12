@@ -7,7 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 - Roger J. Bos, CFA</copyright>
-    <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/tags/yield-farming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/tags/yield-farming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yield Farming on Synthetix</title>
+      <link>https://crypto.rogerjbos.com/yield-farming-on-synthetix/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/yield-farming-on-synthetix/</guid>
+      <description>Introduction Synthetix is a derivative liquidity protocol which enables the creation of synthetic assets, backed up by their native SNX token. I have been holding SNX on Celsius for a long time earning 14.05%. Turns out not to have been a very good deal since the token price has fallen by 75% since I have owned it. Anyway, it is not all Synthetix fault as many similar tokens have had similar declines, so that&amp;rsquo;s just the crypto market.</description>
+    </item>
+    
+    <item>
+      <title>Yield Farming on Acala</title>
+      <link>https://crypto.rogerjbos.com/yield-farming-on-acala/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/yield-farming-on-acala/</guid>
+      <description>Introduction Acala Network aims to be the DeFi hub of Polkadot. I came across Acala during their crowdloan process, which is how Polkadot projects secure funding for auction slots on the Polkadot network. Acala was fortunate enough to win the first ever Polkadot auction slot.
+Acala offers yield farming just like all the other DeFi projects, as shown below, but there are a few ways you can get even better returns on Acala.</description>
+    </item>
+    
     <item>
       <title>Staying safe with RugDoc</title>
       <link>https://crypto.rogerjbos.com/staying-safe-with-rugdoc/</link>

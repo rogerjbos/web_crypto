@@ -3,10 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://crypto.rogerjbos.com/</loc>
-    <lastmod>2022-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://crypto.rogerjbos.com/post/</loc>
-    <lastmod>2022-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/</loc>
+    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/yield-farming/</loc>
+    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/yield-farming-on-synthetix/</loc>
+    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/yield-farming-on-acala/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/portfolio-allocation/</loc>
+    <lastmod>2022-02-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/the-permanent-portfolio-redux/</loc>
+    <lastmod>2022-02-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/data/</loc>
+    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/query/</loc>
+    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/query-blockchain-data-using-subquery-network/</loc>
+    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/typescript/</loc>
+    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/options/</loc>
+    <lastmod>2022-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/options-vaults-using-thetanuts/</loc>
+    <lastmod>2022-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://crypto.rogerjbos.com/tags/structured-products/</loc>
+    <lastmod>2022-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://crypto.rogerjbos.com/tags/staking/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
@@ -14,13 +53,7 @@
     <loc>https://crypto.rogerjbos.com/staking-bittorrent/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://crypto.rogerjbos.com/tags/</loc>
-    <lastmod>2022-01-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://crypto.rogerjbos.com/staying-safe-with-rugdoc/</loc>
-    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://crypto.rogerjbos.com/tags/yield-farming/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://crypto.rogerjbos.com/yield-farming-on-orca/</loc>

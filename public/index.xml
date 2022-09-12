@@ -7,14 +7,60 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 - Roger J. Bos, CFA</copyright>
-    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yield Farming on Synthetix</title>
+      <link>https://crypto.rogerjbos.com/yield-farming-on-synthetix/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/yield-farming-on-synthetix/</guid>
+      <description>Introduction Synthetix is a derivative liquidity protocol which enables the creation of synthetic assets, backed up by their native SNX token. I have been holding SNX on Celsius for a long time earning 14.05%. Turns out not to have been a very good deal since the token price has fallen by 75% since I have owned it. Anyway, it is not all Synthetix fault as many similar tokens have had similar declines, so that&amp;rsquo;s just the crypto market.</description>
+    </item>
+    
+    <item>
+      <title>Yield Farming on Acala</title>
+      <link>https://crypto.rogerjbos.com/yield-farming-on-acala/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/yield-farming-on-acala/</guid>
+      <description>Introduction Acala Network aims to be the DeFi hub of Polkadot. I came across Acala during their crowdloan process, which is how Polkadot projects secure funding for auction slots on the Polkadot network. Acala was fortunate enough to win the first ever Polkadot auction slot.
+Acala offers yield farming just like all the other DeFi projects, as shown below, but there are a few ways you can get even better returns on Acala.</description>
+    </item>
+    
+    <item>
+      <title>The Permanent Portfolio Redux</title>
+      <link>https://crypto.rogerjbos.com/the-permanent-portfolio-redux/</link>
+      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/the-permanent-portfolio-redux/</guid>
+      <description>Introduction Many people obsess about which stock to buy and when to sell it, but research shows that asset allocation is the largest determinant of portfolio performance. Back around 1980 Harry Browne proposed what he called the Permanent Portfolio. He advocated that you could set it up in 30 minutes and have lifelong financial security. He published a book called Fail-Safe Investing in 2001. Most research has shown that the permanent portfolio has held up pretty well.</description>
+    </item>
+    
+    <item>
+      <title>Query blockchain data using SubQuery Network</title>
+      <link>https://crypto.rogerjbos.com/query-blockchain-data-using-subquery-network/</link>
+      <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/query-blockchain-data-using-subquery-network/</guid>
+      <description>Introducion This post is of a more technical nature, covering the programming side of crypto rather than the yield aspect. Specifically, using SubQuery Network to extract data from Polkadot and Kusama blockchains, which are known as substrate. On the Ethereum blockchain there are similar projects such as The Graph and Dune Analytics. What all of these projects do is index blockchain data and make it available to the public to query it.</description>
+    </item>
+    
+    <item>
+      <title>Options Vaults using Thetanuts</title>
+      <link>https://crypto.rogerjbos.com/options-vaults-using-thetanuts/</link>
+      <pubDate>Sun, 06 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/options-vaults-using-thetanuts/</guid>
+      <description>Introduction You may think I am crazy with this post, but I recently heard about Thetanuts, which is a DeFi app that lets you participate in options strategies on digital assets (a nice term for altcoins). Below I will briefly describe what an option is. For now, know that options strategies can be complex to devise and manage. There are five Greeks that describe the option characteristics and pricing. Most people have probably heard of delta, which describes the expected price change of an option given a price change in the underlying security.</description>
+    </item>
+    
     <item>
       <title>Staking BitTorrent</title>
       <link>https://crypto.rogerjbos.com/staking-bittorrent/</link>
       <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://crypto.rogerjbos.com/staking-bittorrent/</guid>
-      <description>Introduction BitTorrent is probably a project most people have heard of, but don&amp;rsquo;t know much about. They have a host of product based on their decentralized torrent protocol and the fees are payable in their native BTT token. I had some BTT tokens, but they didn&amp;rsquo;t move much in price the entire time I held them and I finally sold them. I noticed recently that the BitTorrent team completed a redenomination of their token (1000 for 1) to increase supply to facilitate easier payments.</description>
+      <description>Introduction BitTorrent is probably a project most people have heard of, but don&amp;rsquo;t know much about. They have a host of products based on their decentralized torrent protocol and the fees are payable in their native BTT token. I had some BTT tokens, but they didn&amp;rsquo;t move much in price the entire time I held them and I finally sold them. I noticed recently that the BitTorrent team completed a redenomination of their token (1000 for 1) to increase supply to facilitate easier payments.</description>
     </item>
     
     <item>

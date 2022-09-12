@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>typescript on Crypto Adventures</title>
+    <link>https://crypto.rogerjbos.com/tags/typescript/</link>
+    <description>Recent content in typescript on Crypto Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2021 - Roger J. Bos, CFA</copyright>
+    <lastBuildDate>Wed, 09 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Query blockchain data using SubQuery Network</title>
+      <link>https://crypto.rogerjbos.com/query-blockchain-data-using-subquery-network/</link>
+      <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/query-blockchain-data-using-subquery-network/</guid>
+      <description>Introducion This post is of a more technical nature, covering the programming side of crypto rather than the yield aspect. Specifically, using SubQuery Network to extract data from Polkadot and Kusama blockchains, which are known as substrate. On the Ethereum blockchain there are similar projects such as The Graph and Dune Analytics. What all of these projects do is index blockchain data and make it available to the public to query it.</description>
+    </item>
+    
+  </channel>
+</rss>

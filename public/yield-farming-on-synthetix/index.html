@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Yield Farming on Synthetix &middot; Roger J. Bos, CFA</title>
+        <meta name="description" content="Introduction Synthetix is a derivative liquidity protocol which enables the creation of synthetic assets, backed up by their native SNX token. I have been holding SNX on Celsius for a long time earning 14.05%. Turns out not to have been a very good deal since the token price has fallen by 75% since I have owned it. Anyway, it is not all Synthetix fault as many similar tokens have had similar declines, so that&rsquo;s just the crypto market.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.90.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Yield Farming on Synthetix">
+<meta property="og:description" content="Introduction Synthetix is a derivative liquidity protocol which enables the creation of synthetic assets, backed up by their native SNX token. I have been holding SNX on Celsius for a long time earning 14.05%. Turns out not to have been a very good deal since the token price has fallen by 75% since I have owned it. Anyway, it is not all Synthetix fault as many similar tokens have had similar declines, so that&rsquo;s just the crypto market.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://crypto.rogerjbos.com/yield-farming-on-synthetix/">
+        <link rel="stylesheet" href="https://crypto.rogerjbos.com/dist/site.css">
+        <link rel="stylesheet" href="https://crypto.rogerjbos.com/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121878757-3', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="https://crypto.rogerjbos.com/">Crypto Adventures</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" aria-label="Twitter" href="https://twitter.com/rogerjbos" rel="me" >
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/rogerjbos" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" aria-label="Stack Overflow" href="https://stackoverflow.com/users/7351478" rel="me">
+                                <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://linkedin.com/in/rogerjbos/" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:roger.john.bos@gmail.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a href="/about/">About</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/reports/trending.html">Tokens</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/reports/nav.html">NAV</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/glossary/">Glossary</a>
+    </li>
+
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Yield Farming on Synthetix</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2022-03-22" itemprop="datePublished">Tue, Mar 22, 2022</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Roger J. Bos, CFA</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <h3 id="introduction">Introduction</h3>
+<p><a href="https://synthetix.io/">Synthetix</a> is a derivative liquidity protocol which enables the creation of synthetic assets, backed up by their native <strong>SNX</strong> token.  I have been holding <strong>SNX</strong> on <a href="https://celsius.network/">Celsius</a> for a long time earning 14.05%.  Turns out not to have been a very good deal since the token price has fallen by 75% since I have owned it.  Anyway, it is not all Synthetix fault as many similar tokens have had similar declines, so that&rsquo;s just the crypto market.  Love it or hate it.  I never got around to staking the token, but they recently made staking available on the <a href="https://www.optimism.io/apps/defi">Optimism</a> layer 2, where the fees are much lower, so I decided to move it off of Celsius and stake it on their layer 2.  The estimated rewards are about four times higher than from Celsius.</p>
+<p><img src="/img/snx_earnings.png" alt=""></p>
+<h3 id="staking">Staking</h3>
+<p>If you go to their <a href="https://staking.synthetix.io/staking">Staking</a> page it will give you options about minting <strong>sUSD</strong> and I&rsquo;m thinking I don&rsquo;t want to mint <strong>sUSD</strong>, I just want to stake my <strong>SNX</strong>.  I knew <strong>sUSD</strong> was you required to to create or trade derivatives on Synthetix, but I didn&rsquo;t realize that that was also how you stake <strong>SNX</strong>.  When you stake <strong>SNX</strong>, you also mint <strong>sUSD</strong>, which creates a debt position.  You have to pay back that <strong>sUSD</strong> debt in order to get your <strong>SNX</strong> back.  The <strong>sUSD</strong> debt is the collateral that backs the derivatives created on Synthetix.</p>
+<p>It is even more complicated, however, because the your debt level changes with the system-wide assets.  Lets say that total debt at some point is as follow: $2 million total with $1 million <strong>sUSD</strong> and $1 million worth of <strong>sETH</strong> with current ETH price of $2500 (400 <strong>sETH</strong>).  Now assume your current debt at that time is $2000, which would be 0.1% of the total debt.  The next day ETH goes to $3000 and nothing else changes (no trades or mintings are performed in the meantime).  Total debt is still $1 million <strong>sUSD</strong> and 400 <strong>sETH</strong>, but those 400 <strong>sETH</strong> are now worth $1.2 million.  So the total debt went up to $2.2 million and you are still responsible for 0.1% of that, so now your debt is $2200.  Alternatively, if ETH dumps to $2000 your debt goes down from $2000 to $1800.</p>
+<p>For this reason, it is important that you invest your minted <strong>sUSD</strong> in assets that will either perform better than the system-wide debt, or in line with the system-wide debt.</p>
+<h3 id="optimistic-ethereum-bridge">Optimistic Ethereum Bridge</h3>
+<p>You can stake on Ethereum, but then you have high gas fees and since rewards are paid weekly, the gas fees would add up.  For that reason, I will be staking on Optimistic Ethereum (Op L2) where the gas fees are much, much lower.  First, however, I need to use the <a href="https://gateway.optimism.io/">Optimism bridge</a> to get my <strong>SNX</strong> token from Ethereum to Op L2.</p>
+<p>Two transactions are required to bridge assets to Op L2, approval and deposit.  The approval cost me $5.88 and the deposit was $29.65.  The whole process takes about 20 minutes before the tokens show up on the Optimistic Ethereum mainnet.</p>
+<p>You will also need some ETH on Op L2, but you won&rsquo;t need very much because th gas fees are very low.  <a href="https://portr.xyz/">Teleporter</a> is a site that will let you bridge 0.05 ETH for a very low cost.</p>
+<h3 id="minting-susd">Minting <strong>sUSD</strong></h3>
+<p>Once your <strong>SNX</strong> tokens show up in Op L2, you can click on <code>Stake</code> and then <code>Mint Max</code>.  That will mint the exact amount of <strong>sUSD</strong> to set your collateral ratio at 500%</p>
+<h3 id="collateral-ratio">Collateral Ratio</h3>
+<p>It is important to keep an eye on your C-ratio.  The Synthetix Dapp will show your C-ratio on the left hand side of the screen.  The C-ratio is the value of all <strong>SNX</strong> in your wallet divided by your debt in <strong>sUSD</strong> and is shown on the left side of the Dapp.</p>
+<p><img src="/img/snx_c_ratio.png" alt=""></p>
+<p>The goal is to keep the C-ratio at or below 500% to maximize the weekly rewards, but rewards can only be claimed when the C-ratio is above 500%.  You can manage the C-ratio by <code>minting</code> and <code>burning</code>:</p>
+<ul>
+<li><code>Minting</code> is the process of converting <strong>SNX</strong> to <strong>sUSD</strong></li>
+<li><code>Burning</code> is the process of converting <strong>sUSD</strong> back into <strong>SNX</strong></li>
+</ul>
+<p>So you aren&rsquo;t loosing anything when you <code>burn</code> <strong>sUSD</strong>, you just pay a transaction fee to do so, but since we are using Op L2, the gas fee is low and not very significant.</p>
+<p>Additionally you want to invest you borrowed <strong>sUSD</strong> in an asset allocation similar to the system wide debt to keep you debt level from changing too much as the market changes.  Here is a sample of the global debt pool:</p>
+<p><img src="/img/snx_global_debt_pool.png" alt=""></p>
+<h3 id="global-debt-pool">Global Debt Pool</h3>
+<p>The global debt pool is not all that complicated, it around 82% <strong>sUSD</strong>, around 15% <strong>sETH</strong> (synthetic <strong>ETH</strong>), and around 3% other.  Two good options to put your <strong>sUSD</strong> to work are <a href="https://www.lyra.finance/">Lyra</a> and <a href="https://kwenta.io/exchange">Kwenta</a>.</p>
+<p><a href="https://docs.lyra.finance/onboarding/why-synths">Here</a> is a good guide to help you get exposure to <strong>ETH</strong> or any other crypto using your newly minted <strong>sUSD</strong>.  I personally put 17% of my <strong>sUSD</strong> into <strong>sETH</strong> using Kwenta to hedge my exposure.  It was very easy and straightforward.  You will see your assets in MetaMask, even the <strong>SNX</strong> that you staked, but it will be restricted so you can&rsquo;t actually spend it while it is staked.</p>
+<h3 id="alternatives">Alternatives</h3>
+<p>As mentioned in the introduction, Celsius is offering a 14.05% yield on their platform for holding <strong>SNX</strong>, which isn&rsquo;t that bad.  I was excited to tell you about <a href="https://app.bancor.network/pools">Bancor</a> as another option because yesterday they were showing an APY of 45% for staking <strong>SNX</strong>, but when I checked today to take a screenshot I saw that it fell to 14%.</p>
+<p><img src="/img/snx_bancor.png" alt=""></p>
+<p>That&rsquo;s a big drop in one day.  I don&rsquo;t know what all is going on, but the basically they use the daily trading volume to estimate the annual yield and the daily trading volume must fluctuate drastically.  Anyway, I have never actually used Bancor yet, but from reading their website it sounds like they do have some attractive features that would make staking <strong>SNX</strong> very worthwhile if you could get 45%.  Less so at 14%, but that seems fair since that is what Celsius is paying as well.  With Bancor you don&rsquo;t have to worry about collective rewards, managing debt, or impermanent loss as long as you hold the position for around 100 days due to their <a href="https://newsletter.banklesshq.com/p/how-to-protect-yourself-from-impermanent?s=r">protection plan</a>.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>While you can earn a lot more yield by staking <strong>SNX</strong> directly than using a platform, it is more difficult.  In fact, staking Synthetix <strong>SNX</strong> tokens is probably one of the most complicated ways of earning yield in the entire crypto space.  With most staking platforms, you can just passively let your rewards grow over time.  With Synthetic you have to manually collect them every week and maintain your debt level at the appropriate level to receive rewards and not get liquidated.  However, for the true crypto enthusiast it is well worth the time and effect and not really all that hard once you give it a try.</p>
+<h3 id="disclaimer">Disclaimer</h3>
+<p>These posts are for informational and educational purposes only and should not be construed as investment advice or a recommendation to buy or sell any tokens.  In this series I am just outlining what I am doing to learn more about the crypto space.  Just because I am comfortable doing this, that does not necessarily mean these activities are suitable for you.  I have not received any compensation from any of the products or services mentioned herein.  Please do your own research and stay skeptical.  These markets are not normal.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/yield-farming/">Yield Farming</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Yield%20Farming%20on%20Synthetix&url=https%3a%2f%2fcrypto.rogerjbos.com%2fyield-farming-on-synthetix%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Yield%20Farming%20on%20Synthetix&url=https%3a%2f%2fcrypto.rogerjbos.com%2fyield-farming-on-synthetix%2f&summary="
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;" aria-label="Share on LinkedIn">
+               <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="https://crypto.rogerjbos.com/">Crypto Adventures</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2022 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://crypto.rogerjbos.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://crypto.rogerjbos.com/js/jquery.fitvids.js"></script>
+        <script src="https://crypto.rogerjbos.com/js/scripts.js"></script>
+    </body>
+</html>
+

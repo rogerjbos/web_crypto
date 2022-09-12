@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Query blockchain data using SubQuery Network &middot; Roger J. Bos, CFA</title>
+        <meta name="description" content="Query blockchain data using SubQuery Network and others">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.90.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Query blockchain data using SubQuery Network">
+<meta property="og:description" content="Query blockchain data using SubQuery Network and others">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://crypto.rogerjbos.com/query-blockchain-data-using-subquery-network/">
+        <link rel="stylesheet" href="https://crypto.rogerjbos.com/dist/site.css">
+        <link rel="stylesheet" href="https://crypto.rogerjbos.com/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121878757-3', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="https://crypto.rogerjbos.com/">Crypto Adventures</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" aria-label="Twitter" href="https://twitter.com/rogerjbos" rel="me" >
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/rogerjbos" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" aria-label="Stack Overflow" href="https://stackoverflow.com/users/7351478" rel="me">
+                                <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://linkedin.com/in/rogerjbos/" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:roger.john.bos@gmail.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a href="/about/">About</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/reports/trending.html">Tokens</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/reports/nav.html">NAV</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/glossary/">Glossary</a>
+    </li>
+
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Query blockchain data using SubQuery Network</h1>
+    
+        <p class="post-description" itemprop="description">Query blockchain data using SubQuery Network and others</p>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2022-02-09" itemprop="datePublished">Wed, Feb 9, 2022</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Roger J. Bos, CFA</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <h3 id="introducion">Introducion</h3>
+<p>This post is of a more technical nature, covering the programming side of crypto rather than the yield aspect.  Specifically, using <a href="https://subquery.network/">SubQuery Network</a> to extract data from Polkadot and Kusama blockchains, which are known as <a href="https://substrate.io/">substrate</a>.  On the Ethereum blockchain there are similar projects such as <a href="https://thegraph.com/en/">The Graph</a> and <a href="https://dune.xyz/browse/dashboards">Dune Analytics</a>.  What all of these projects do is index blockchain data and make it available to the public to query it.  First we will review some of the Ethereum options, then go on to SubQuery.</p>
+<h3 id="the-graph">The Graph</h3>
+<p>I will start with The Graph since they are the first one that I heard about.  The idea is that anyone can write queries using blockchain data and then other people will pay them <strong>GRT</strong> tokens in order to use those queries.  Users needing Ethereum blockchain data can look to the queries with the largest number of <strong>GRT</strong> tokens backing them to find the most trustworthy queries.  Learning how to write queries for The Graph involves learning the <a href="https://www.typescriptlang.org/docs/">Typescript</a> programming language and learning <a href="https://www.typescriptlang.org/docs/">GraphQL</a>, which is an API interface language.  These are not trivial tasks.</p>
+<h3 id="dune-analytics">Dune Analytics</h3>
+<p>Dune Analytics has taken a different approach.  Instead of making you learn typescript and GraphQL, the team at Dune Analytics has imported all the Ethereum blockchain data (or at least most of it) into their relational databases and built a web-based front end where you can query the data using stand SQL commands.  Once you have the data you want, you can publish it into tables and graphs as dashboard and share those dashboards with others.</p>
+<p>Here is a simple <a href="https://dune.xyz/Rogerjbos/test-dashboard">dashboard</a> I made.  You can see more dashboards <a href="https://dune.xyz/browse/dashboards">here</a>.  If you don&rsquo;t know SQL, you can still look at all the dashboards other people have built and gain some valuable insights about the Ethereum network that way.</p>
+<h3 id="subquery">SubQuery</h3>
+<p>One problem is that The Graph and Dune Analytics only support Ethereum, so you can&rsquo;t use one service to get data from all the different blockchains out there.  SubQuery Network is focused on the Polkadot and Kusama ecosystems, including all the parachains like <a href="https://acala.network/">Acala</a>, <a href="https://moonbeam.network/">Moonbeam</a>, <a href="https://parallel.fi/">Parallel Finance</a>, etc.</p>
+<p>If you really want to learn how to use SubQuery and create your own projects and queries, there are a lot of resources on their website, one of them being <a href="https://doc.subquery.network/academy/herocourse/">The Hero Course</a>.  Before you begin you should be familiar with Typescript, GraphQL, and Docker.  I will very briefly outline the steps involved, along with some of the issues I encountered while working through the exercises.  I had two main problems.  The first was getting the tutorials on Github to work on my local machine and the second was getting the SubQuery command line interface (CLI) to connect to my postgres database.  I will explain the solution to both of those problems.</p>
+<h3 id="outline-of-steps">Outline of steps</h3>
+<p>This is not a full tutorial, just an outline of the steps involved.  Once you do it a few times it will become second nature.  Assuming you have all the necessary software installed, the firs step is to initialize a new project in the terminal.</p>
+<pre tabindex="0"><code>subsql init
+</code></pre><p>This will create a new directory with a number of files and folders.  There are three primary files you will need to learn about, two of which are in the root directory and one of which is in the src/mappings folder.  You can click the links to see an examples of these files.</p>
+<ul>
+<li><a href="https://github.com/rogerjbos/tutorials-validator-threshold/blob/main/schema.graphql">schema.graphql</a> - this file defines the structure of the data you want to query.</li>
+<li><a href="https://github.com/rogerjbos/tutorials-validator-threshold/blob/main/project.yaml">project.yaml</a> - this file lists the data sources (handlers) and filters (modules and methods)</li>
+<li><a href="https://github.com/rogerjbos/tutorials-validator-threshold/blob/main/src/mappings/ValidatorThreshold.ts">src/mappings/mappingHandlers.ts</a> - this is the typescript file that defines the function that will extract the blockchain data and save it into the tables defined in the schema.graphql file.</li>
+</ul>
+<p>Once you have modified all those files to your needs, you can run the following code to install all the dependencies.</p>
+<pre tabindex="0"><code>yarn install
+</code></pre><p>Next you can run the following code to generate the rest of code for your project.  This command also creates documentation for your project which will be very useful to you and others who use the project to extract data.</p>
+<pre tabindex="0"><code>yarn codegen
+</code></pre><p>Finally, you can build the project using the build command.</p>
+<pre tabindex="0"><code>yarn build
+</code></pre><p>Once the build completes successfully, you are test it out in one of two ways: 1) using docker and 2) using the SubQuery command line interface.  Using the docker instance is probably the easier route and would be accomplished by running the following two commands.</p>
+<pre tabindex="0"><code>docker-compose pull
+docker-composr up
+</code></pre><p>You can issue both of those commands on the same line, but I like to break them up.  <strong>If you get any error with the pull command, make sure the docker application is running.</strong>  It is easy to forget that.  Once the docker instance is up and running, you will see your project start to record blocks.  At that point you can connect to localhost:3000 in your browser to access the <a href="https://explorer.subquery.network/subquery/AcalaNetwork/karura">playground</a> where you can write your GraphQL query to access your data.</p>
+<p>If you have trouble following the steps in the exercises, you can download completed tutorials from SubQuery&rsquo;s github account, but I found that the localhost:3000 connection wasn&rsquo;t working with the tutorials I downloaded from Github.  Turns out the <code>docker-compose.yml</code> file is outdated on the Github site and that was causing a problem.  You can get the latest version of the <code>docker-compose.yml</code> file from any project that you create locally using the <code>subql init</code> command, then copy that file to the folder you downloaded from Github.  The file is generic so you don&rsquo;t need to change anything.  That should fix the connection problem.</p>
+<p>An alternative to using docker is to use the <code>subql-node</code> command.  I saw this in some of the videos and I really wanted to try it, but you need to install and configure postgres if it is not already installed.  Here is the full command.</p>
+<pre tabindex="0"><code>subql-node -f .
+</code></pre><p>The <code>.</code> in the command above is a reference to the current folder.  You can also use the folder name in that instance.  An added benefit of this method is that you can view the postgres tables that are created.  This is good to verify that the column names do indeed match what you specified in the <code>schema.graphql</code> file and the mappings file.</p>
+<p>I had a problem with this setup on my Mac because I was getting <code>permission denied</code> errors when <code>subql-node</code> tried to connect to the postgres database.  The instructions SubQuery provides in their documentation are pretty straightforward.  The database name is <code>postgres</code> and the username is <code>postgres</code> and the password is <code>postgres</code>, as shown below.</p>
+<pre tabindex="0"><code>export DB_USER=postgres
+export DB_PASS=postgres
+export DB_DATABASE=postgres
+export DB_HOST=localhost
+export DB_PORT=5432
+subql-node -f .
+</code></pre><p>Upon running <code>subql-node -f .</code> Exporting those parameters didn&rsquo;t help and I was getting the same permission denied error.  Running as <code>sudo</code> did not help either.  It took a long time for me to figure out the problem so I decided to post it here in case anyone else comes across it.</p>
+<p>I kept trying to log into postgres as the <code>postgres</code> user to figure out what the problem was, but I noticed that I was getting permission denied errors inside postgres as well.  It turns out that the default superuser is not postgres, but the current mac-os user.  In order to solve the problem I had to log into the postgres database without specifying the user (hence the current mac-os user), as such:</p>
+<pre tabindex="0"><code>psql -d postgres
+</code></pre><p>You will know this works when the prompt changes to <code>postgres=#</code>.  Then you can make the <code>postgres</code> user a superuser using the following command:</p>
+<pre tabindex="0"><code>ALTER ROLE postgres superuser;
+</code></pre><p>The response should be <code>ALTER ROLE</code>.  That fixed the problem for me.</p>
+<p>If you want to see a project I did using data from the Karura blockchain, you can check it out <a href="https://acala.rogerjbos.com/swap_ver3.html">here</a>.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Learning how to create SubQuery projects has been a fun learning experience, but there were some simple problems that did cost me some time and frustration.  I hope this post helps a few people, encourages them to learn more about Substrate blockchain data, and saves them some time in the process.</p>
+<h3 id="disclaimer">Disclaimer</h3>
+<p>These posts are for informational and educational purposes only and should not be construed as investment advice or a recommendation to buy or sell any tokens.  In this series I am just outlining what I am doing to learn more about the crypto space.  Just because I am comfortable doing this, that does not necessarily mean these activities are suitable for you.  I have not received any compensation from any of the products or services mentioned herein.  Please do your own research and stay skeptical.  These markets are not normal.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/data/">data</a>, 
+                <a href="/tags/query/">query</a>, 
+                <a href="/tags/typescript/">typescript</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Query%20blockchain%20data%20using%20SubQuery%20Network&url=https%3a%2f%2fcrypto.rogerjbos.com%2fquery-blockchain-data-using-subquery-network%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Query%20blockchain%20data%20using%20SubQuery%20Network&url=https%3a%2f%2fcrypto.rogerjbos.com%2fquery-blockchain-data-using-subquery-network%2f&summary=Query%20blockchain%20data%20using%20SubQuery%20Network%20and%20others"
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;" aria-label="Share on LinkedIn">
+               <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="https://crypto.rogerjbos.com/">Crypto Adventures</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2022 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://crypto.rogerjbos.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://crypto.rogerjbos.com/js/jquery.fitvids.js"></script>
+        <script src="https://crypto.rogerjbos.com/js/scripts.js"></script>
+    </body>
+</html>
+

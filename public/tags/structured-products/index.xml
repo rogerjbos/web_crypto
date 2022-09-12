@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Structured Products on Crypto Adventures</title>
+    <link>https://crypto.rogerjbos.com/tags/structured-products/</link>
+    <description>Recent content in Structured Products on Crypto Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2021 - Roger J. Bos, CFA</copyright>
+    <lastBuildDate>Sun, 06 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://crypto.rogerjbos.com/tags/structured-products/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Options Vaults using Thetanuts</title>
+      <link>https://crypto.rogerjbos.com/options-vaults-using-thetanuts/</link>
+      <pubDate>Sun, 06 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://crypto.rogerjbos.com/options-vaults-using-thetanuts/</guid>
+      <description>Introduction You may think I am crazy with this post, but I recently heard about Thetanuts, which is a DeFi app that lets you participate in options strategies on digital assets (a nice term for altcoins). Below I will briefly describe what an option is. For now, know that options strategies can be complex to devise and manage. There are five Greeks that describe the option characteristics and pricing. Most people have probably heard of delta, which describes the expected price change of an option given a price change in the underlying security.</description>
+    </item>
+    
+  </channel>
+</rss>
